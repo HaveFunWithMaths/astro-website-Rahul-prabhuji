@@ -179,15 +179,23 @@ class NarrativeContentManager {
   }
 
   async loadContent() {
-    try {
-      const response = await fetch('public/assets/HomeContent.txt');
-      if (response.ok) {
-        this.rawContent = await response.text();
-      } else {
-        this.rawContent = fallbackHomeContent;
+    const paths = ['public/assets/HomeContent.txt', 'assets/HomeContent.txt', '/public/assets/HomeContent.txt', '/assets/HomeContent.txt'];
+    let loaded = false;
+
+    for (const path of paths) {
+      try {
+        const response = await fetch(path);
+        if (response.ok) {
+          this.rawContent = await response.text();
+          loaded = true;
+          break;
+        }
+      } catch (e) {
+        // continue to next path
       }
-    } catch (e) {
-      console.warn('Loading fallback content:', e);
+    }
+
+    if (!loaded) {
       this.rawContent = fallbackHomeContent;
     }
 

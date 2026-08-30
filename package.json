@@ -1,0 +1,18 @@
+{
+  "name": "astro-website-rahul",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My Astro Academy Single Page Application founded by Dr. Rahul Trivedi, Ph.D. (IIT-Madras)",
+  "scripts": {
+    "dev": "python -m http.server 8080",
+    "start": "python -m http.server 8080"
+  },
+  "keywords": [
+    "astrology",
+    "numerology",
+    "spirituality",
+    "vedic-astrology"
+  ],
+  "author": "Dr. Rahul Trivedi, Ph.D.",
+  "license": "ISC"
+}
