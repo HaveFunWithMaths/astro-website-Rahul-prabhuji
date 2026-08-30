@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (toggleStoryBtn && fullStoryContainer) {
     toggleStoryBtn.addEventListener('click', () => {
-      const isHidden = fullStoryContainer.style.display === 'none' || fullStoryContainer.style.display === '';
+      const isHidden = window.getComputedStyle(fullStoryContainer).display === 'none';
       if (isHidden) {
         fullStoryContainer.style.display = 'block';
-        toggleStoryBtn.innerText = 'Hide Complete Narrative ▲';
+        toggleStoryBtn.innerText = 'Hide Complete Founder Journey ▲';
         fullStoryContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
         fullStoryContainer.style.display = 'none';
