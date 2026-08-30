@@ -1,0 +1,271 @@
+/* Responsive Styles for My Astro Academy (Desktop, Tablet & Mobile) */
+
+/* Tablets & Medium Screens (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-badge-row, .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-triad-banner {
+    max-width: 550px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .framework-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Phones & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --section-pad-y: 3.8rem;
+    --section-pad-x: 1.2rem;
+  }
+
+  .site-header {
+    height: 72px;
+  }
+
+  .nav-container {
+    height: 72px;
+  }
+
+  .nav-menu, .nav-btn-book {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .mobile-nav-drawer {
+    top: 72px;
+    height: calc(100vh - 72px);
+  }
+
+  .hero-section {
+    padding-top: 105px;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .hero-triad-banner {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .sacred-geometry-wrapper {
+    width: 290px;
+    height: 290px;
+  }
+
+  .portrait-container {
+    width: 240px;
+    height: 240px;
+  }
+
+  .phd-credential-badge {
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
+    bottom: -10px;
+  }
+
+  .narrative-card {
+    padding: 2rem 1.4rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .narrative-timeline {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .story-quote-box {
+    padding: 1.4rem 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 2.2rem 1.5rem;
+  }
+
+  .framework-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .myth-science-container {
+    padding: 1.8rem 1.2rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .accordion-header {
+    padding: 1.2rem 1.2rem;
+    font-size: 1.05rem;
+  }
+
+  .accordion-content {
+    padding: 0 1.2rem;
+  }
+
+  .accordion-item.active .accordion-content {
+    padding: 0 1.2rem 1.4rem 1.2rem;
+  }
+
+  .testimonials-filter-bar {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    font-size: 0.82rem;
+    padding: 0.5rem 1.1rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wizard-card {
+    padding: 1.8rem 1.2rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .service-select-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intake-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-full {
+    grid-column: span 1;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wizard-progress-bar {
+    margin-bottom: 2rem;
+  }
+
+  .step-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .step-label {
+    font-size: 0.72rem;
+  }
+
+  .timeslot-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .modal-container {
+    padding: 2rem 1.4rem;
+  }
+}
+
+/* Extra Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.68rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sacred-geometry-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .portrait-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .calendar-days-grid {
+    gap: 0.25rem;
+  }
+
+  .day-slot {
+    padding: 0.4rem 0;
+    font-size: 0.8rem;
+  }
+
+  .wizard-nav-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .wizard-nav-buttons div {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
