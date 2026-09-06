@@ -37,8 +37,35 @@ html, body {
     max-width: 550px;
   }
 
-  .services-grid {
+  .kpi-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logic-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .about-portrait-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .disciplines-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .framework-grid {
@@ -65,14 +92,14 @@ html, body {
   }
 
   .site-header {
-    height: 70px;
+    height: 64px;
   }
 
   .nav-container {
-    height: 70px;
+    height: 64px;
   }
 
-  .nav-menu, .nav-btn-book {
+  .nav-menu, .nav-btn-consult {
     display: none;
   }
 
@@ -81,13 +108,13 @@ html, body {
   }
 
   .mobile-nav-drawer {
-    top: 70px;
-    height: calc(100vh - 70px);
+    top: 64px;
+    height: calc(100vh - 64px);
     width: 88%;
   }
 
   .hero-section {
-    padding-top: 95px;
+    padding-top: 90px;
     padding-bottom: 3rem;
   }
 
@@ -137,27 +164,51 @@ html, body {
     font-size: 0.85rem;
   }
 
-  .narrative-card {
+  .cosmic-thesis-banner {
     padding: 2rem 1.2rem;
-    border-radius: var(--radius-lg);
   }
 
-  .narrative-quote-decor {
-    font-size: 5rem;
-    right: 1rem;
-    top: 1rem;
+  .cosmic-founder-claim {
+    font-size: 1.15rem;
   }
 
-  .narrative-timeline {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    margin: 2rem 0;
+  .disciplines-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
 
-  .story-quote-box {
-    padding: 1.3rem 1.1rem;
-    font-size: 1.05rem;
-    margin: 1.8rem 0;
+  .discipline-card {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .discipline-emoji {
+    font-size: 1.6rem;
+  }
+
+  .dilemmas-container {
+    padding: 2rem 1.2rem;
+  }
+
+  .dilemma-pill {
+    font-size: 0.86rem;
+    padding: 0.6rem 1.1rem;
+  }
+
+  .founder-whatsapp-box {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 1.8rem 1.2rem;
+  }
+
+  .founder-whatsapp-box > div:last-child {
+    align-items: center !important;
+    width: 100%;
+  }
+
+  .founder-whatsapp-box .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .services-grid {
@@ -338,6 +389,10 @@ html, body {
     font-size: 0.8rem;
   }
 
+  .disciplines-grid {
+    grid-template-columns: 1fr;
+  }
+
   .calendar-days-grid {
     gap: 0.2rem;
   }
@@ -364,5 +419,21 @@ html, body {
   .progress-line-track {
     left: 20px;
     right: 20px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .about-triad-box {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-whatsapp {
+    bottom: 16px;
+    right: 16px;
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
   }
 }

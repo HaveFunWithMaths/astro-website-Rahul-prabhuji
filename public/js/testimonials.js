@@ -1,62 +1,62 @@
 /**
  * Testimonials Module
- * Handles filterable client reviews across Career, Decisions, and Spiritual categories.
+ * Handles filterable client reviews across Vastu, Astrology, and Numerology categories.
  */
 
 const testimonialsData = [
   {
+    name: 'Radheshyam Agarwal & Family',
+    role: 'Industrialist & Real Estate Developer, Ahmedabad',
+    category: 'vastu',
+    categoryLabel: 'Vastu & Plot Layout',
+    avatar: 'RA',
+    rating: 5,
+    quote: 'We consulted Dr. Rahul for a 4-acre factory plot and our family home. Unlike traditional practitioners who immediately ask to demolish walls or instill fear, Dr. Trivedi used geomagnetic vectors and elemental balancing. His 100% non-destructive remedies brought remarkable peace and business progress.'
+  },
+  {
     name: 'Anand Raghavan',
     role: 'Co-Founder & CTO, SaaS Enterprise | IIT-M Alum',
-    category: 'career',
-    categoryLabel: 'Career & Business',
+    category: 'astrology',
+    categoryLabel: 'Vedic Astrology',
     avatar: 'AR',
     rating: 5,
-    quote: 'As an IIT graduate and engineer, I was inherently skeptical of astrology. Dr. Rahul’s consultation was completely devoid of mysticism or fear. His timeline analysis of my venture’s funding cycle aligned with micro-precision. His scientific clarity was refreshing.'
+    quote: 'As an IIT graduate and engineer, I was inherently skeptical of astrology. Dr. Rahul’s consultation was completely devoid of superstition or fear. His timeline analysis of our venture’s inflection windows and Dasha cycles aligned with mathematical precision.'
   },
   {
-    name: 'Dr. Shalini Mukhopadhyay',
-    role: 'Postdoctoral Fellow in Molecular Biology',
-    category: 'decisions',
-    categoryLabel: 'Life Decisions',
+    name: 'Dr. Shalini & Rajesh Mukhopadhyay',
+    role: 'Senior Researcher & Family, Kolkata / Singapore',
+    category: 'astrology',
+    categoryLabel: 'Vedic Astrology',
     avatar: 'SM',
     rating: 5,
-    quote: 'Dr. Trivedi brings the rigorous lens of an IIT researcher to chart evaluation. He presented probabilities, planetary influences, and decision frameworks rather than fatalistic prophecies. It provided immense clarity during my international transition.'
+    quote: 'We sought Kundali guidance for family decision-making and our daughter’s education timing. Dr. Trivedi brings the rigorous lens of an IIT researcher combined with genuine reverence for traditional Jyotish shastras. It gave our family supreme clarity.'
   },
   {
-    name: 'Vikramaditya Shah',
-    role: 'Managing Director, Private Equity',
-    category: 'career',
-    categoryLabel: 'Career & Business',
+    name: 'Vikramaditya Singhania',
+    role: 'Managing Director, Manufacturing Group, Mumbai',
+    category: 'numerology',
+    categoryLabel: 'Astro-Numerology',
     avatar: 'VS',
     rating: 5,
-    quote: 'The numerology audit for our brand restructuring and the strategic Dasha timing analysis provided concrete strategic foresight. No gemstones, no unreasonable promises — purely empirical pattern analysis and grounded strategic counsel.'
+    quote: 'The numerology audit for our brand restructuring and the strategic name frequency harmonization provided concrete results. Dr. Rahul explained the mathematical frequency resonance behind every letter and compound number with pure logic.'
   },
   {
-    name: 'Dr. Meera Nambiar',
-    role: 'Associate Professor & Sadhana Practitioner',
-    category: 'spiritual',
-    categoryLabel: 'Spiritual Guidance',
-    avatar: 'MN',
+    name: 'Col. Sanjeev & Sunita Sharma',
+    role: 'Retired Defence Officer & Homeowner, Gurugram',
+    category: 'vastu',
+    categoryLabel: 'Vastu & Plot Layout',
+    avatar: 'SS',
     rating: 5,
-    quote: 'Finding a mentor who balances classical Vedanta, authentic Mantra science, and rigorous scientific questioning is exceptionally rare. Dr. Rahul structured my daily Dhyana practice with profound psychological and spiritual insight.'
+    quote: 'Before performing our Griha Pravesh, we had Dr. Rahul evaluate our duplex layout. His balance of the North-East Ishanya corner and Brahmasthan using simple elemental copper and brass placements completely transformed the energy of our home.'
   },
   {
-    name: 'Karthik Sundaram',
-    role: 'Staff AI Engineer, Bengaluru',
-    category: 'decisions',
-    categoryLabel: 'Life Decisions',
+    name: 'Karthik & Deepa Sundaram',
+    role: 'Tech Leads, Bengaluru',
+    category: 'astrology',
+    categoryLabel: 'Vedic Astrology',
     avatar: 'KS',
     rating: 5,
-    quote: 'I booked a relationship synastry session. The multi-system cross-verification using D-9 Navamsha and KP sub-lords was methodical and insightful. It helped us understand our cognitive temperaments with empathy.'
-  },
-  {
-    name: 'Siddharth Deshmukh',
-    role: 'Author & Meditator',
-    category: 'spiritual',
-    categoryLabel: 'Spiritual Guidance',
-    avatar: 'SD',
-    rating: 5,
-    quote: 'His synthesis of logic and intuition is truly authentic. The guidance on Japa phonetics and Patanjali Yoga Sutras felt like drinking from a pure, uncorrupted ancestral spring.'
+    quote: 'We booked a Kundali Milan and relationship synastry session. The multi-system cross-verification using D-9 Navamsha and planetary Dashas was methodical and compassionate. It helped us understand each other’s temperaments with deep respect.'
   }
 ];
 

@@ -44,29 +44,29 @@ class CosmicBackground {
     const count = Math.floor((this.canvas.width * this.canvas.height) / 5500);
 
     for (let i = 0; i < count; i++) {
-      const isGold = Math.random() < 0.18;
-      const isCyan = Math.random() < 0.12;
-      let color = 'rgba(248, 250, 252, ';
-      if (isGold) color = 'rgba(245, 208, 97, ';
-      else if (isCyan) color = 'rgba(56, 189, 248, ';
+      const isGold = Math.random() < 0.4;
+      const isIndigo = Math.random() < 0.3;
+      let color = 'rgba(179, 135, 40, '; // Swarna Gold
+      if (isGold) color = 'rgba(197, 155, 39, '; // Bright Champagne Gold
+      else if (isIndigo) color = 'rgba(9, 14, 36, '; // Soft Imperial Indigo Stardust
 
       this.stars.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
         baseY: Math.random() * this.canvas.height,
-        radius: Math.random() * 1.6 + 0.3,
-        alpha: Math.random() * 0.7 + 0.3,
-        baseAlpha: Math.random() * 0.7 + 0.3,
-        twinkleSpeed: Math.random() * 0.02 + 0.005,
+        radius: Math.random() * 1.5 + 0.3,
+        alpha: Math.random() * 0.2 + 0.05,
+        baseAlpha: Math.random() * 0.2 + 0.05,
+        twinkleSpeed: Math.random() * 0.015 + 0.005,
         twinklePhase: Math.random() * Math.PI * 2,
         colorBase: color,
-        layer: Math.random() * 2 + 0.5, // Parallax depth layer
+        layer: Math.random() * 2 + 0.5,
       });
     }
   }
 
   drawConstellations() {
-    const maxDist = 110;
+    const maxDist = 95;
     this.ctx.lineWidth = 0.5;
 
     for (let i = 0; i < this.stars.length; i += 3) {
@@ -76,8 +76,8 @@ class CosmicBackground {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < maxDist) {
-          const alpha = (1 - dist / maxDist) * 0.14;
-          this.ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
+          const alpha = (1 - dist / maxDist) * 0.06;
+          this.ctx.strokeStyle = `rgba(179, 135, 40, ${alpha})`;
           this.ctx.beginPath();
           this.ctx.moveTo(this.stars[i].x, this.stars[i].y);
           this.ctx.lineTo(this.stars[j].x, this.stars[j].y);

@@ -1,65 +1,89 @@
 :root {
-  /* Color Palette - Scholarly Cosmic */
-  --bg-space-deep: #050814;
-  --bg-space-dark: #090f24;
-  --bg-surface: rgba(13, 22, 45, 0.75);
-  --bg-surface-elevated: rgba(20, 33, 66, 0.85);
-  --bg-card: rgba(15, 25, 52, 0.7);
-  --bg-card-hover: rgba(24, 38, 77, 0.88);
-  --bg-glass: rgba(10, 18, 38, 0.65);
+  /* Color Palette - Modern High-Clarity Light Theme (Porcelain & Imperial Indigo) */
+  --bg-space-deep: #fcfcfd;
+  --bg-space-dark: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.95);
 
-  /* Gold & Celestial Accents */
-  --gold-300: #fef08a;
-  --gold-400: #facc15;
-  --gold-500: #eab308;
-  --gold-primary: #d4af37;
-  --gold-bright: #f5d061;
-  --gold-rich: #c59b27;
-  --gold-dark: #997300;
-  --gold-glow: rgba(212, 175, 55, 0.28);
-  --gold-border: rgba(212, 175, 55, 0.22);
-  --gold-border-bright: rgba(245, 208, 97, 0.6);
+  /* Deep Imperial Cosmic Indigo (For Authority, Legibility & Headings) */
+  --indigo-950: #070c1e;
+  --indigo-900: #090e24;
+  --indigo-800: #0f172a;
+  --indigo-700: #1e293b;
+  --indigo-600: #334155;
 
-  /* Text & Starlight */
-  --text-white: #ffffff;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #8fa1b8;
-  --text-gold: #f5d061;
+  /* Royal Champagne Swarna Gold (Polished, Luminous, Regal) */
+  --gold-100: #fdfbf7;
+  --gold-200: #f7edd5;
+  --gold-300: #eedebd;
+  --gold-400: #dfb746;
+  --gold-500: #c59b27;
+  --gold-primary: #c2410c;
+  --gold-bright: #ea580c;
+  --gold-rich: #9a3412;
+  --gold-dark: #7c2d12;
+  --gold-glow: rgba(194, 65, 12, 0.1);
+  --gold-glow-lg: rgba(194, 65, 12, 0.2);
+  --gold-border: #e2e8f0;
+  --gold-border-bright: #c2410c;
+  --gold-subtle: #fff7ed;
+
+  /* Sacred Kesari Saffron & Vermilion */
+  --kesari-primary: #c2410c;
+  --kesari-bright: #ea580c;
+  --kesari-deep: #9a3412;
+  --kesari-subtle: #fff7ed;
+  --kumkum-accent: #be123c;
+
+  /* WhatsApp Emerald */
+  --whatsapp-green: #25D366;
+  --whatsapp-hover: #1ebc57;
+  --whatsapp-dark: #075E54;
+  --whatsapp-glow: rgba(37, 211, 102, 0.25);
+
+  /* Text & Typography (High Legibility on Crisp Light) */
+  --text-white: #090e24;       /* Used on headings for bold imperial contrast */
+  --text-primary: #1e293b;     /* Primary body text */
+  --text-secondary: #475569;   /* Supporting paragraphs */
+  --text-muted: #64748b;       /* Captions and hints */
+  --text-gold: #996515;
+  --text-kesari: #c2410c;
 
   /* Accent Tones */
-  --cyan-accent: #38bdf8;
-  --cyan-glow: rgba(56, 189, 248, 0.25);
-  --indigo-accent: #818cf8;
-  --emerald-accent: #34d399;
+  --cyan-accent: #0284c7;
+  --cyan-glow: rgba(2, 132, 199, 0.12);
+  --emerald-accent: #059669;
 
   /* Typography */
-  --font-serif-title: 'Cinzel', Georgia, serif;
+  --font-serif-title: 'Cinzel', 'Playfair Display', Georgia, serif;
   --font-serif-body: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Spacing */
   --container-max: 1240px;
-  --section-pad-y: 5.5rem;
+  --section-pad-y: 5rem;
   --section-pad-x: 1.5rem;
 
   /* Radii */
   --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-xl: 32px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 
-  /* Shadows & Glows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
-  --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.25);
-  --shadow-gold-lg: 0 0 45px rgba(212, 175, 55, 0.4);
+  /* Crisp Modern Clean Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  --shadow-gold: 0 6px 20px rgba(179, 135, 40, 0.12);
+  --shadow-gold-lg: 0 12px 36px rgba(179, 135, 40, 0.18);
 
   /* Transitions */
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
