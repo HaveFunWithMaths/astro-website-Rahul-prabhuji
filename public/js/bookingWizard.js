@@ -186,13 +186,6 @@ class BookingWizard {
         this.filterByCategory(category);
       });
     });
-
-    const categorySelect = document.getElementById('intake-category-select');
-    if (categorySelect) {
-      categorySelect.addEventListener('change', (e) => {
-        this.filterByCategory(e.target.value);
-      });
-    }
   }
 
   filterByCategory(category) {
@@ -208,37 +201,35 @@ class BookingWizard {
       }
     });
 
-    // Update category dropdown if present
-    const categorySelect = document.getElementById('intake-category-select');
-    if (categorySelect && categorySelect.value !== category) {
-      categorySelect.value = category;
-    }
-
-    const catData = INTAKE_CATEGORIES[category] || INTAKE_CATEGORIES.all;
-
-    // If category specifies a preferred service, select it
-    if (catData.serviceId) {
-      const targetCard = document.querySelector(`.service-select-card[data-service-id="${catData.serviceId}"]`);
-      if (targetCard && !targetCard.classList.contains('selected')) {
-        targetCard.click();
+    if (category === 'vastu' || category === 'kids' || category === 'health') {
+      const targetCard = document.querySelector('.service-select-card[data-service-id="vastu"]');
+      if (targetCard) targetCard.click();
+      
+      const vastuFocus = document.getElementById('vastu-focus');
+      if (vastuFocus) {
+        if (category === 'kids') vastuFocus.value = "Kids' Study Zone & Overcoming Restlessness/Distraction";
+        else if (category === 'health') vastuFocus.value = "Health, Sickness & Restful Sleep Placement";
+        else vastuFocus.selectedIndex = 0;
+        vastuFocus.dispatchEvent(new Event('change'));
       }
-    }
+    } else if (category === 'astrology' || category === 'work' || category === 'relationships' || category === 'money') {
+      const targetCard = document.querySelector('.service-select-card[data-service-id="astrology"]');
+      if (targetCard) targetCard.click();
 
-    // Populate focus dropdown with category options
-    const focusSelect = document.getElementById('intake-focus');
-    if (focusSelect) {
-      focusSelect.innerHTML = '';
-      catData.options.forEach(opt => {
-        const optionEl = document.createElement('option');
-        optionEl.value = opt.value;
-        optionEl.textContent = opt.label;
-        focusSelect.appendChild(optionEl);
-      });
-
-      if (catData.options.length > 0) {
-        focusSelect.selectedIndex = 0;
-        this.bookingData.focusArea = catData.options[0].value;
+      const astroFocus = document.getElementById('astro-focus');
+      if (astroFocus) {
+        if (category === 'work') astroFocus.value = "Career Inflection, Promotion & Job vs Business Timing";
+        else if (category === 'relationships') astroFocus.value = "Kundali Milan & Relationship Compatibility";
+        else if (category === 'money') astroFocus.value = "Financial Cycles, Investments & Debt Relief";
+        else astroFocus.selectedIndex = 0;
+        astroFocus.dispatchEvent(new Event('change'));
       }
+    } else if (category === 'numerology') {
+      const targetCard = document.querySelector('.service-select-card[data-service-id="numerology"]');
+      if (targetCard) targetCard.click();
+    } else if (category === 'counsellor') {
+      const targetCard = document.querySelector('.service-select-card[data-service-id="counsellor"]');
+      if (targetCard) targetCard.click();
     }
 
     this.updateSummary();
@@ -292,7 +283,7 @@ class BookingWizard {
         this.bookingData.service = title;
         this.bookingData.duration = duration;
 
-        // Toggle form fields based on whether service is Vastu, Counsellor, or Astrology/Numerology
+        // Toggle form fields: show ONLY selected discipline section!
         this.toggleServiceSpecificFields(serviceId);
         this.updateSummary();
       });
@@ -300,38 +291,69 @@ class BookingWizard {
   }
 
   toggleServiceSpecificFields(serviceId) {
-    const birthFields = document.querySelectorAll('.field-birth-only');
-    const vastuFields = document.querySelectorAll('.field-vastu-only');
+    // Hide all discipline sections
+    const allSections = document.querySelectorAll('.discipline-section');
+    allSections.forEach(sec => sec.classList.remove('active'));
+
+    // Show ONLY the chosen discipline section
+    const activeSection = document.getElementById(`section-${serviceId}`);
+    if (activeSection) {
+      activeSection.classList.add('active');
+    }
+
+    this.syncActiveSectionData(serviceId);
+  }
+
+  syncActiveSectionData(serviceId) {
+    if (!serviceId) serviceId = this.bookingData.serviceId || 'vastu';
 
     if (serviceId === 'vastu') {
-      birthFields.forEach(el => el.style.display = 'none');
-      vastuFields.forEach(el => el.style.display = 'block');
+      const propType = document.getElementById('vastu-prop-type');
+      const propDir = document.getElementById('vastu-prop-dir');
+      const focus = document.getElementById('vastu-focus');
+      const notes = document.getElementById('vastu-notes');
+      if (propType) this.bookingData.propertyType = propType.value;
+      if (propDir) this.bookingData.propertyDirection = propDir.value;
+      if (focus) this.bookingData.focusArea = focus.value;
+      if (notes) this.bookingData.notes = notes.value;
+    } else if (serviceId === 'astrology') {
+      const dob = document.getElementById('astro-dob');
+      const tob = document.getElementById('astro-tob');
+      const pob = document.getElementById('astro-pob');
+      const focus = document.getElementById('astro-focus');
+      const notes = document.getElementById('astro-notes');
+      if (dob) this.bookingData.dob = dob.value;
+      if (tob) this.bookingData.tob = tob.value;
+      if (pob && pob.value.trim()) this.bookingData.astroPob = pob.value.trim();
+      if (focus) this.bookingData.focusArea = focus.value;
+      if (notes) this.bookingData.notes = notes.value;
+    } else if (serviceId === 'numerology') {
+      const dob = document.getElementById('num-dob');
+      const focus = document.getElementById('num-focus');
+      const item = document.getElementById('num-item');
+      const notes = document.getElementById('num-notes');
+      if (dob) this.bookingData.dob = dob.value;
+      if (focus) this.bookingData.focusArea = focus.value;
+      if (item) this.bookingData.numItem = item.value;
+      if (notes) this.bookingData.notes = notes.value;
     } else if (serviceId === 'counsellor') {
-      birthFields.forEach(el => el.style.display = 'block');
-      vastuFields.forEach(el => el.style.display = 'none');
-    } else {
-      birthFields.forEach(el => el.style.display = 'block');
-      vastuFields.forEach(el => el.style.display = 'none');
+      const focus = document.getElementById('counsel-focus');
+      const notes = document.getElementById('counsel-notes');
+      if (focus) this.bookingData.focusArea = focus.value;
+      if (notes) this.bookingData.notes = notes.value;
     }
   }
 
   setupFormSync() {
-    const inputs = [
+    // Universal contact fields
+    const universalInputs = [
       { id: 'intake-name', key: 'fullName' },
       { id: 'intake-email', key: 'email' },
       { id: 'intake-phone', key: 'phone' },
-      { id: 'intake-dob', key: 'dob' },
-      { id: 'intake-tob', key: 'tob' },
-      { id: 'intake-accuracy', key: 'tobAccuracy' },
-      { id: 'intake-city', key: 'pobCity' },
-      { id: 'intake-state', key: 'pobState' },
-      { id: 'intake-property-type', key: 'propertyType' },
-      { id: 'intake-property-dir', key: 'propertyDirection' },
-      { id: 'intake-focus', key: 'focusArea' },
-      { id: 'intake-notes', key: 'notes' }
+      { id: 'intake-city', key: 'pobCity' }
     ];
 
-    inputs.forEach(item => {
+    universalInputs.forEach(item => {
       const el = document.getElementById(item.id);
       if (el) {
         el.addEventListener('input', (e) => {
@@ -342,6 +364,46 @@ class BookingWizard {
           this.bookingData[item.key] = e.target.value;
           this.updateSummary();
         });
+      }
+    });
+
+    // Vastu inputs
+    const vastuInputs = ['vastu-prop-type', 'vastu-prop-dir', 'vastu-focus', 'vastu-notes'];
+    vastuInputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => { this.syncActiveSectionData('vastu'); this.updateSummary(); });
+        el.addEventListener('change', () => { this.syncActiveSectionData('vastu'); this.updateSummary(); });
+      }
+    });
+
+    // Astrology inputs
+    const astroInputs = ['astro-dob', 'astro-tob', 'astro-pob', 'astro-focus', 'astro-notes'];
+    astroInputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => { this.syncActiveSectionData('astrology'); this.updateSummary(); });
+        el.addEventListener('change', () => { this.syncActiveSectionData('astrology'); this.updateSummary(); });
+      }
+    });
+
+    // Numerology inputs
+    const numInputs = ['num-dob', 'num-focus', 'num-item', 'num-notes'];
+    numInputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => { this.syncActiveSectionData('numerology'); this.updateSummary(); });
+        el.addEventListener('change', () => { this.syncActiveSectionData('numerology'); this.updateSummary(); });
+      }
+    });
+
+    // Counsellor inputs
+    const counselInputs = ['counsel-focus', 'counsel-notes'];
+    counselInputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => { this.syncActiveSectionData('counsellor'); this.updateSummary(); });
+        el.addEventListener('change', () => { this.syncActiveSectionData('counsellor'); this.updateSummary(); });
       }
     });
   }
@@ -454,20 +516,30 @@ class BookingWizard {
       }
 
       if (!cityInput || !cityInput.value.trim()) {
-        alert('Please enter your City/Location.');
+        alert('Please enter your City / Location.');
         if (cityInput) cityInput.focus();
         return false;
       }
 
-      if (this.bookingData.serviceId === 'astrology' || this.bookingData.serviceId === 'numerology') {
-        const dobInput = document.getElementById('intake-dob');
+      if (this.bookingData.serviceId === 'astrology') {
+        const dobInput = document.getElementById('astro-dob');
         if (!dobInput || !dobInput.value) {
-          alert('Date of Birth is required for accurate astronomical and numerological analysis.');
+          alert('Date of Birth is required for accurate Vedic astrological calculations.');
           if (dobInput) dobInput.focus();
           return false;
         }
       }
 
+      if (this.bookingData.serviceId === 'numerology') {
+        const dobInput = document.getElementById('num-dob');
+        if (!dobInput || !dobInput.value) {
+          alert('Date of Birth is required for Mulank & Bhagyank calculation.');
+          if (dobInput) dobInput.focus();
+          return false;
+        }
+      }
+
+      this.syncActiveSectionData(this.bookingData.serviceId);
       return true;
     }
 
@@ -517,6 +589,8 @@ class BookingWizard {
   }
 
   updateSummary() {
+    this.syncActiveSectionData(this.bookingData.serviceId);
+
     const elService = document.getElementById('summary-service');
     const elDateTime = document.getElementById('summary-datetime');
     const elName = document.getElementById('summary-name');
@@ -535,7 +609,11 @@ class BookingWizard {
         elBirth.innerText = `${prop} ${dir ? '• ' + dir : ''} ${city ? '• ' + city : ''}`;
       } else if (this.bookingData.serviceId === 'counsellor') {
         const city = this.bookingData.pobCity || '';
-        elBirth.innerText = `1-on-1 Confidential Counseling ${city ? '• ' + city : ''}`;
+        elBirth.innerText = `1-on-1 Confidential Guidance ${city ? '• ' + city : ''}`;
+      } else if (this.bookingData.serviceId === 'numerology') {
+        const dob = this.bookingData.dob || '—';
+        const item = this.bookingData.numItem ? ` • Checking: ${this.bookingData.numItem}` : '';
+        elBirth.innerText = `DOB: ${dob}${item}`;
       } else {
         const dob = this.bookingData.dob || '—';
         const tob = this.bookingData.tob || '';
@@ -543,7 +621,7 @@ class BookingWizard {
         elBirth.innerText = `${dob} ${tob ? '(' + tob + ')' : ''} ${city ? '• ' + city : ''}`;
       }
     }
-    if (elFocus) elFocus.innerText = this.bookingData.focusArea || 'General Analysis';
+    if (elFocus) elFocus.innerText = this.bookingData.focusArea || 'Strategic Clarity';
 
     if (elPreview) {
       elPreview.innerText = this.generateWhatsAppMessage(true);
@@ -551,40 +629,45 @@ class BookingWizard {
   }
 
   generateWhatsAppMessage(isPreview = false) {
+    this.syncActiveSectionData(this.bookingData.serviceId);
+
     let msg = `*॥ Consultation Inquiry — My Astro Academy ॥*\n*Dr. Rahul Trivedi, Ph.D. (IIT-Madras)*\n*Higher Dimensional Sciences (Verifiable Ancient Wisdom)*\n\n`;
     msg += `*Selected Discipline:* ${this.bookingData.service}\n`;
     msg += `*Preferred Time Window:* ${this.bookingData.selectedDate || 'Upcoming Date'} at ${this.bookingData.selectedTime}\n`;
     msg += `*Client Name:* ${this.bookingData.fullName || '[Your Name]'}\n`;
-    if (this.bookingData.phone) msg += `*Contact Phone:* ${this.bookingData.phone}\n`;
+    if (this.bookingData.phone) msg += `*WhatsApp Number:* ${this.bookingData.phone}\n`;
     if (this.bookingData.email) msg += `*Email:* ${this.bookingData.email}\n`;
+    msg += `*City / Location:* ${this.bookingData.pobCity || '[City]'}\n`;
 
     if (this.bookingData.serviceId === 'vastu') {
-      msg += `\n*-- Property & Space Parameters --*\n`;
-      msg += `*Space Type:* ${this.bookingData.propertyType}\n`;
-      msg += `*Main Entrance:* ${this.bookingData.propertyDirection}\n`;
-      msg += `*Location:* ${this.bookingData.pobCity || '[City]'}${this.bookingData.pobState ? ', ' + this.bookingData.pobState : ''}\n`;
-    } else if (this.bookingData.serviceId === 'counsellor') {
-      msg += `\n*-- Confidential Counseling Scope --*\n`;
-      msg += `*Consultation Mode:* 1-on-1 Spiritual & Life Counseling\n`;
-      if (this.bookingData.pobCity) msg += `*Location:* ${this.bookingData.pobCity}${this.bookingData.pobState ? ', ' + this.bookingData.pobState : ''}\n`;
-      if (this.bookingData.dob) msg += `*Date of Birth (Optional):* ${this.bookingData.dob}\n`;
-    } else {
+      msg += `\n*-- Vastu & Living Space Parameters --*\n`;
+      msg += `*Property Type:* ${this.bookingData.propertyType || 'Residential Flat'}\n`;
+      msg += `*Main Entrance:* ${this.bookingData.propertyDirection || 'North Facing'}\n`;
+      msg += `*Primary Focus:* ${this.bookingData.focusArea || "Kids' Study Zone & Overcoming Distraction"}\n`;
+      if (this.bookingData.notes) msg += `*Property Notes:* ${this.bookingData.notes}\n`;
+    } else if (this.bookingData.serviceId === 'astrology') {
       msg += `\n*-- Astronomical & Birth Parameters --*\n`;
       msg += `*Date of Birth:* ${this.bookingData.dob || '[DD/MM/YYYY]'}\n`;
-      msg += `*Time of Birth:* ${this.bookingData.tob || 'To confirm'} (${this.bookingData.tobAccuracy})\n`;
-      msg += `*Place of Birth:* ${this.bookingData.pobCity || '[City]'}${this.bookingData.pobState ? ', ' + this.bookingData.pobState : ''}\n`;
-    }
-
-    msg += `\n*Primary Area of Inquiry:* ${this.bookingData.focusArea}\n`;
-    if (this.bookingData.notes) {
-      msg += `*Specific Context / Dilemma:* ${this.bookingData.notes}\n`;
+      if (this.bookingData.tob) msg += `*Time of Birth:* ${this.bookingData.tob}\n`;
+      msg += `*Primary Inquiry:* ${this.bookingData.focusArea || 'The Next Move / Strategic Crossroads'}\n`;
+      if (this.bookingData.notes) msg += `*Specific Context:* ${this.bookingData.notes}\n`;
+    } else if (this.bookingData.serviceId === 'numerology') {
+      msg += `\n*-- Numerology & Vibrational Tuning Parameters --*\n`;
+      msg += `*Date of Birth:* ${this.bookingData.dob || '[DD/MM/YYYY]'}\n`;
+      msg += `*Primary Tuning Focus:* ${this.bookingData.focusArea || 'Name Spelling Harmony'}\n`;
+      if (this.bookingData.numItem) msg += `*Number / Name to Analyze:* ${this.bookingData.numItem}\n`;
+      if (this.bookingData.notes) msg += `*Specific Goals:* ${this.bookingData.notes}\n`;
+    } else if (this.bookingData.serviceId === 'counsellor') {
+      msg += `\n*-- Confidential 1-on-1 Guidance Scope --*\n`;
+      msg += `*Primary Area:* ${this.bookingData.focusArea || 'Life Crossroads & Decision Paralysis'}\n`;
+      if (this.bookingData.notes) msg += `*Personal Context:* ${this.bookingData.notes}\n`;
     }
 
     if (!isPreview && this.bookingData.refCode) {
-      msg += `*Reference Code:* ${this.bookingData.refCode}\n`;
+      msg += `\n*Reference Code:* ${this.bookingData.refCode}\n`;
     }
 
-    msg += `\nNamaste Dr. Rahul ji, please let me know your availability for this consultation.`;
+    msg += `\nNamaste Dr. Rahul ji, please let me know your upcoming consultation availability. Thank you!`;
     return msg;
   }
 

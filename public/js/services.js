@@ -138,11 +138,12 @@ function consultAstroTopic(topicName) {
     const astroCard = document.querySelector('.service-select-card[data-service-id="astrology"]');
     if (astroCard) astroCard.click();
     
-    // Set notes or focus
-    const focusSelect = document.getElementById('intake-focus');
+    // Set focus in astro-focus
+    const focusSelect = document.getElementById('astro-focus') || document.getElementById('intake-focus');
     if (focusSelect) {
       for (let i = 0; i < focusSelect.options.length; i++) {
-        if (focusSelect.options[i].text.toLowerCase().includes(topicName.toLowerCase())) {
+        if (focusSelect.options[i].text.toLowerCase().includes(topicName.toLowerCase()) ||
+            topicName.toLowerCase().includes(focusSelect.options[i].value.toLowerCase())) {
           focusSelect.selectedIndex = i;
           focusSelect.dispatchEvent(new Event('change'));
           break;
@@ -150,9 +151,9 @@ function consultAstroTopic(topicName) {
       }
     }
     
-    const notesInput = document.getElementById('intake-notes');
+    const notesInput = document.getElementById('astro-notes') || document.getElementById('intake-notes');
     if (notesInput && !notesInput.value) {
-      notesInput.value = `I am seeking clarity regarding ${topicName} and my next move.`;
+      notesInput.value = `I am seeking clarity regarding ${topicName} and my immediate next move.`;
       notesInput.dispatchEvent(new Event('input'));
     }
   }

@@ -4,19 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Astro Academy | Vastu Shastra, Vedic Astrology & Astro-Numerology</title>
+  <title>My Astro Academy | Dr. Rahul Trivedi, Ph.D. (IIT-Madras) • Vedic Science</title>
   <meta name="description"
     content="Authentic Vastu Shastra, Vedic Astrology, and Astro-Numerology consultations founded by Dr. Rahul Trivedi, Ph.D. (IIT-Madras). Blending traditional Indian Vedic wisdom with empirical scientific and mathematical logic.">
   <meta name="keywords"
     content="Vastu Shastra, Vedic Astrology, Numerology, Dr Rahul Trivedi, IIT Madras, Jyotish, Griha Vastu, Commercial Vastu, Name Numerology, Kundali Milan, Spiritual Counseling, Higher Dimensional Sciences">
   <meta name="author" content="Dr. Rahul Trivedi, Ph.D.">
 
+  <!-- Browser Tab Favicon (Dr. Rahul Trivedi Photo) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png?v=2">
+  <link rel="icon" type="image/jpeg" href="assets/Photo.jpeg?v=2">
+  <link rel="shortcut icon" href="favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=2">
+
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="My Astro Academy | Vastu Shastra, Vedic Astrology & Numerology">
+  <meta property="og:title" content="My Astro Academy | Dr. Rahul Trivedi, Ph.D. (IIT-Madras)">
   <meta property="og:description"
     content="Where Scientific Rigor Meets Cosmic Wisdom. Founded by Dr. Rahul Trivedi, Ph.D. (IIT-Madras).">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/AstroLogo.jpeg">
+  <meta property="og:image" content="assets/Photo.jpeg">
 
   <!-- Google Fonts: Traditional Serif + Contemporary Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,10 +32,10 @@
     rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/variables.css?v=2.2">
-  <link rel="stylesheet" href="css/base.css?v=2.2">
-  <link rel="stylesheet" href="css/components.css?v=2.2">
-  <link rel="stylesheet" href="css/responsive.css?v=2.2">
+  <link rel="stylesheet" href="css/variables.css?v=3.0">
+  <link rel="stylesheet" href="css/base.css?v=3.0">
+  <link rel="stylesheet" href="css/components.css?v=3.0">
+  <link rel="stylesheet" href="css/responsive.css?v=3.0">
 </head>
 
 <body>
@@ -54,8 +60,9 @@
         <li><a href="#hero" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About Me</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#astrology-life-tabs" class="nav-link">Life Dimensions</a></li>
         <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-        <li><a href="#services" class="nav-link nav-contact-link">Contact Us</a></li>
+        <li><a href="#whatsapp-intake" class="nav-link nav-contact-link">Contact Us</a></li>
       </ul>
 
       <!-- Nav Actions (Clean & Uncrowded) -->
@@ -76,8 +83,9 @@
     <a href="#hero" class="mobile-nav-link">Home</a>
     <a href="#about" class="mobile-nav-link">About Dr. Rahul Trivedi</a>
     <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#astrology-life-tabs" class="mobile-nav-link">Life Dimensions</a>
     <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
-    <a href="#services" class="mobile-nav-link" style="color: #c2410c; font-weight: 700;">Contact Us</a>
+    <a href="#whatsapp-intake" class="mobile-nav-link" style="color: #c2410c; font-weight: 700;">Contact Us</a>
     <a href="#whatsapp-intake" class="btn btn-whatsapp" style="margin-top: 1rem; justify-content: center;">
       <svg viewBox="0 0 24 24">
         <path
@@ -90,54 +98,46 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge-row">
-            <span class="phd-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c3 3 9 3 12 0v-5" />
-              </svg>
-              Dr. Rahul Trivedi, Ph.D. (IIT-Madras)
-            </span>
-            <span class="celestial-badge">॥ वास्तु • वैदिक ज्योतिष • अंक शास्त्र • जीवन मार्गदर्शन ॥</span>
-          </div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-row">
+              <span class="celestial-badge">॥ वास्तु • वैदिक ज्योतिष • अंक शास्त्र • जीवन मार्गदर्शन ॥</span>
+            </div>
 
-          <!-- Clear Primary Headline stating what the website does -->
-          <h1 class="hero-title">
-            <span class="vastu-title-text">Vastu Shastra</span>, Vedic Astrology & Astro-Numerology
-          </h1>
+            <!-- Clear Primary Headline stating what the website does -->
+            <h1 class="hero-title">
+              <span class="vastu-title-text">Vastu Shastra</span>, Vedic Astrology &amp; Astro-Numerology
+            </h1>
 
           <!-- Secondary Tagline: Higher Dimensional Sciences -->
           <div style="margin-bottom: 1rem;">
             <span
-              style="display: inline-block; padding: 0.42rem 1.15rem; background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: var(--radius-full); font-size: 0.88rem; font-family: var(--font-serif-title); letter-spacing: 0.08em; color: #090e24; font-weight: 700; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);">
-              ✦ Higher Dimensional Sciences • Where Scientific Rigor Meets Vedic Wisdom ✦
+              style="display: inline-block; padding: 0.45rem 1.25rem; background: var(--peak-bone-deep); border: 1.5px solid var(--peak-rule); border-radius: var(--radius-full); font-size: 0.88rem; font-family: var(--font-serif-title); letter-spacing: 0.08em; color: var(--peak-ink-deep); font-weight: 700; box-shadow: 0 1px 3px rgba(42, 36, 24, 0.05);">
+              ✦ Higher Dimensional Science Which Applies in Each &amp; Every Life — Very Verifiable ✦
             </span>
           </div>
 
           <p class="hero-lead">
-            Empowering individuals, families, and businesses through <strong>Higher Dimensional Sciences</strong> — harmonious Vastu Shastra, authentic Vedic Astrology,
-            precision Name &amp; Birth Numerology, and confidential spiritual life counseling — integrating generational
-            ancestral Vedic roots with empirical mathematical and scientific reasoning.
+            Authentic Vedic wisdom is not about superstition or fatalism. It is a <strong>Higher Dimensional Science which applies in each and every life — and is very verifiable</strong>. Whether it is repositioning kids' study desks out of distraction and laziness zones, knowing when to take your next career leap, or harmonizing your name and phone number for effortless success, get grounded, actionable guidance directly from Dr. Rahul Trivedi, Ph.D. (IIT-Madras).
           </p>
 
           <div class="hero-triad-banner">
             <div class="triad-pill">
               <div class="pill-title">Vastu Shastra</div>
-              <div class="pill-sub">Geomagnetic balancing</div>
+              <div class="pill-sub">Kids' focus &amp; healthy sleep</div>
             </div>
             <div class="triad-pill">
               <div class="pill-title">Vedic Astrology</div>
-              <div class="pill-sub">Ephemeris, Dashas & Yajna</div>
+              <div class="pill-sub">Career timing &amp; next move</div>
             </div>
             <div class="triad-pill">
               <div class="pill-title">Astro-Numerology</div>
-              <div class="pill-sub">Sound frequency harmonics</div>
+              <div class="pill-sub">Name &amp; phone number tuning</div>
             </div>
             <div class="triad-pill">
               <div class="pill-title">Life Counsellor</div>
-              <div class="pill-sub">1-on-1 Spiritual clarity</div>
+              <div class="pill-sub">1-on-1 Clarity at crossroads</div>
             </div>
           </div>
 
@@ -151,7 +151,7 @@
               WhatsApp Consultation Intake
             </a>
             <a href="#services" class="btn btn-secondary">
-              Explore 3 Disciplines
+              Explore 4 Disciplines
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 style="margin-left: 0.35rem;">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -162,6 +162,16 @@
 
         <!-- Hero Portrait with Sacred Geometry Frame -->
         <div class="hero-visual">
+          <!-- Academy Emblem Crest positioned above Dr. Rahul Trivedi Photo -->
+          <div class="hero-emblem-wrap hero-emblem-visual">
+            <img src="assets/AstroLogo.jpeg" alt="My Astro Academy Emblem" class="hero-emblem-img">
+            <div class="hero-emblem-info">
+              <span class="hero-emblem-title">MY ASTRO ACADEMY</span>
+              <span class="hero-emblem-sub">Higher Dimensional Sciences • Dr. Rahul Trivedi, Ph.D. (IIT-Madras)</span>
+              <span class="hero-emblem-motto">॥ तर्क, गणित एवं प्रत्यक्ष वैदिक विज्ञान ॥</span>
+            </div>
+          </div>
+
           <div class="sacred-geometry-wrapper animate-float">
             <!-- Orbital Celestial Rings -->
             <div class="orbit-ring orbit-ring-1">
@@ -190,9 +200,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Client KPI Cards Section (In The Beginning) -->
+  <!-- Client KPI Cards Section (In The Beginning) -->
     <section class="kpi-section" id="stats">
       <div class="container">
         <div class="kpi-grid">
@@ -205,8 +216,8 @@
               </svg>
             </div>
             <div class="kpi-number">100+</div>
-            <div class="kpi-title">Vastu Plots & Spaces</div>
-            <div class="kpi-desc">Residential apartments, bungalows, commercial spaces & industrial layouts harmonized.
+            <div class="kpi-title">Vastu Plots &amp; Spaces</div>
+            <div class="kpi-desc">Harmonized homes, study areas &amp; offices using 100% non-destructive corrections.
             </div>
           </div>
 
@@ -222,7 +233,7 @@
             </div>
             <div class="kpi-number">1000+</div>
             <div class="kpi-title">Client Consultations</div>
-            <div class="kpi-desc">Personal, Career, Marriage Synastry & Family guidance across India and globally.</div>
+            <div class="kpi-desc">Grounded career timing, synastry &amp; next-move clarity across India and globally.</div>
           </div>
 
           <!-- Card 3: 500+ Numerology Alignments -->
@@ -234,8 +245,8 @@
               </svg>
             </div>
             <div class="kpi-number">500+</div>
-            <div class="kpi-title">Numerology Alignments</div>
-            <div class="kpi-desc">Name resonance, business brand frequency audits & signature frequency optimization.
+            <div class="kpi-title">Name &amp; Number Alignments</div>
+            <div class="kpi-desc">Fine-tuning names, brand names &amp; phone numbers to eliminate daily silent friction.
             </div>
           </div>
 
@@ -249,7 +260,7 @@
             </div>
             <div class="kpi-number">Ph.D.</div>
             <div class="kpi-title">IIT-Madras Rigor</div>
-            <div class="kpi-desc">100% Non-fatalistic, zero fear-mongering, and pure evidence-driven clarity.</div>
+            <div class="kpi-desc">Higher Dimensional Science: 100% verifiable logic, zero fear-mongering.</div>
           </div>
         </div>
       </div>
@@ -265,130 +276,111 @@
               <polyline points="14 2 14 8 20 8" />
               <line x1="16" y1="13" x2="8" y2="13" />
             </svg>
-            ॥ तर्क, गणित एवं विज्ञान ॥
+            ॥ तर्क, गणित एवं प्रत्यक्ष विज्ञान ॥
           </span>
-          <h2 class="section-title">How Logic Plays a Role in <span class="sacred-gradient-text">Ancient Wisdom</span>
+          <h2 class="section-title">How Logic Shapes <span class="sacred-gradient-text">Higher Dimensional Science</span>
           </h2>
           <p class="section-subtitle">
-            Ancient Indian Shastras are not systems of blind belief or fatalism. They were formulated by
-            rishi-scientists through centuries of astronomical observation, acoustic mathematics, and directional
-            environmental physics.
+            Ancient Indian Shastras are not systems of blind belief or fatalism. They are <strong>Higher Dimensional Sciences which apply in each and every life — and are very verifiable</strong> in your home, your career, and your daily well-being.
           </p>
         </div>
 
         <div class="logic-intro-card">
           <p class="logic-intro-text">
             <em>"My scientific training at IIT-Madras taught me to question, observe, and look for patterns and logic.
-              These are Higher Dimensional Sciences: Astrology is celestial mathematics, Numerology is acoustic vibrational frequency, and Vastu is directional
-              environmental science."</em> — <strong>Dr. Rahul Trivedi</strong>
+              These are Higher Dimensional Sciences that apply to each and every human life: Vastu governs your living space, Astrology reveals your personal timing, and Numerology tunes your everyday rhythm. Every single principle can be tested and verified in your own life."</em> — <strong>Dr. Rahul Trivedi, Ph.D. (IIT-Madras)</strong>
           </p>
         </div>
 
-        <!-- 3 In-Depth Logic Columns -->
+        <!-- 3 In-Depth Logic Columns (Relatable & Common Man Focused) -->
         <div class="logic-grid">
-          <!-- 1. Logic in Vastu (FIRST!) -->
+          <!-- 1. Logic in Vastu (Living Space & Well-being) -->
           <div class="logic-card">
-            <span class="logic-sanskrit-tag">॥ वास्तु शास्त्र एवं भू-चुंबकीय ऊर्जा ॥</span>
+            <span class="logic-sanskrit-tag">॥ स्थापत्य वेद एवं भू-ऊर्जा ॥</span>
             <h3 class="logic-card-title">Logic in Vastu</h3>
             <p class="logic-core-thesis">
-              Vastu is environmental architecture harmonizing the Earth's geomagnetic grid, solar azimuth paths, and
-              elemental physics.
+              How your home and workplace are arranged directly shapes how your family feels, rests, and focuses every single day.
             </p>
             <ul class="logic-points-list">
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Geomagnetic Energy Grid:</strong> Aligning human dwellings with the North-South magnetic
-                  axis and East-West solar radiation path.</span>
+                <span><strong>Kids' Focus &amp; Study Zones:</strong> Sitting in distraction or laziness zones causes restlessness and low retention. Moving to an intellect zone creates verifiable focus.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Pancha Bhoota Balance:</strong> Regulating Water (NE), Fire (SE), Earth (SW), Air (NW),
-                  and Space (Brahmasthan) for optimal biology.</span>
+                <span><strong>Health &amp; Deep Sleep:</strong> Eliminating sleeping directions that cause morning exhaustion, recurring sickness, and restlessness so your body genuinely recharges.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Vastu-Astro Tidbits & Dosha Fixes:</strong> Neutralizing critical vulnerabilities such as
-                  toilets in North-East (Ishanya) or main entrances in South-West (Nairutya).</span>
+                <span><strong>Stopping Financial Leaks:</strong> Correcting critical directional flaws like toilets in North-East (Ishanya) or doors in South-West (Nairutya) that drain finances.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>100% Non-Destructive Solutions:</strong> Remedying energetic blockages using metallic
-                  element strips (copper/brass), color frequencies, and mirrors without breaking walls.</span>
+                <span><strong>100% Non-Destructive Solutions:</strong> Zero demolition of walls — corrected with metallic brass/copper strips, color energy, and spatial reorganization.</span>
               </li>
             </ul>
             <div class="logic-card-footer">
-              Scientific Core: <strong>Geomagnetic Vectors, Solar Physics & Spatial Ergonomics</strong>
+              Verifiable Core: <strong>Kids' Focus, Sickness Prevention &amp; Spatial Harmony</strong>
             </div>
           </div>
 
           <!-- 2. Logic in Astrology & Vedic Yajna -->
           <div class="logic-card">
-            <span class="logic-sanskrit-tag">॥ ज्योतिष विज्ञान एवं खगोल शास्त्र ॥</span>
+            <span class="logic-sanskrit-tag">॥ ज्योतिष विज्ञान एवं काल चक्र ॥</span>
             <h3 class="logic-card-title">Logic in Astrology</h3>
             <p class="logic-core-thesis">
-              Planetary positions are cosmic meteorological indicators, calculated with degree-level ephemeris (Graha
-              Sphuta) down to arc-seconds.
+              Planetary cycles are not fatalistic curses; they are verifiable cosmic seasons that touch every single human life.
             </p>
             <ul class="logic-points-list">
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Mathematical Ephemeris:</strong> Calculations based on exact geographical coordinates and
-                  sidereal (Nirayana) planetary longitudes.</span>
+                <span><strong>Knowing Your Personal Season:</strong> Know when to take bold leaps and when to consolidate, instead of putting in 200% effort into closed doors.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>16 Divisional Harmonic Charts:</strong> Triangulating findings across D-9 Navamsha and
-                  D-10 Dasamsa to eliminate sun-sign generalizations.</span>
+                <span><strong>Career &amp; Business Inflections:</strong> Objective clarity on job changes, promotion windows, business launches, and overseas relocation.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Probabilistic Time Windows:</strong> Dasha and Gochar (transits) outline environmental
-                  tides and decision windows rather than fatalistic decrees.</span>
+                <span><strong>Relationship &amp; Marriage Harmony:</strong> Understand mutual temperaments and emotional needs so you resolve friction with compassion.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Yajna / Fire Sacrifice (Agni Science):</strong> Sacred Vedic Homa acts as elemental alchemy.
-                  Aerosolized medicinal herbal samagri into sacred Agni ionizes and purifies atmospheric static, while
-                  synchronized Sanskrit acoustic chanting harmonizes planetary frequencies (Navagraha Shanti).</span>
+                <span><strong>Authentic Vedic Yajna Remedies:</strong> Sacred fire peace (Homa) and disciplined mindfulness to dissolve mental fog and restore calm.</span>
               </li>
             </ul>
             <div class="logic-card-footer">
-              Scientific Core: <strong>Ephemeris, Psychobiological Cycles & Vedic Agni Science</strong>
+              Verifiable Core: <strong>Life Seasons, Career Timing &amp; Actionable Direction</strong>
             </div>
           </div>
 
-          <!-- 3. Logic in Numerology -->
+          <!-- 3. Logic in Numerology (Simple & Relatable) -->
           <div class="logic-card">
-            <span class="logic-sanskrit-tag">॥ अंक शास्त्र एवं ध्वनि तरङ्ग ॥</span>
+            <span class="logic-sanskrit-tag">॥ अंक शास्त्र एवं ध्वनि सामंजस्य ॥</span>
             <h3 class="logic-card-title">Logic in Numerology</h3>
             <p class="logic-core-thesis">
-              Numbers are acoustic vibrations. Every phoneme in a human or company name carries measurable frequency and
-              resonance.
+              Just like tuning a musical instrument, your name and numbers either support your journey or create silent friction.
             </p>
             <ul class="logic-points-list">
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Acoustic Resonance:</strong> Every vowel and consonant generates sound waveforms.
-                  Numerology maps phonetics to numerical harmonics.</span>
+                <span><strong>The Power of Sound:</strong> Every name produces a sound and rhythm. When your name spelling matches your birth date, life moves with much less resistance.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Three Harmonic Pillars:</strong> Synthesizing Mulank (Birth Date), Bhagyank (Full Date
-                  Sum), and Namank (Name Frequency).</span>
+                <span><strong>Everyday Phone &amp; Vehicle Numbers:</strong> Check whether your daily mobile number or car number attracts unnecessary delays or helps open doors.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Chaldean & Pythagorean Models:</strong> Cross-referencing ancient Chaldean vibrations with
-                  mathematical Pythagorean systems for precision.</span>
+                <span><strong>Business Brand Naming:</strong> Give your firm, shop, or product a name that naturally resonates with customers and generates trust.</span>
               </li>
               <li class="logic-point-item">
                 <span class="logic-bullet-icon">✦</span>
-                <span><strong>Brand & Career Optimization:</strong> Fine-tuning business name spelling, brand naming,
-                  and signatures for constructive interference.</span>
+                <span><strong>Personal Year Roadmap:</strong> Understand the natural theme of your current year — whether to build, launch, invest, or rest.</span>
               </li>
             </ul>
             <div class="logic-card-footer">
-              Scientific Core: <strong>Acoustic Phonetics & Vibrational Frequency Harmonics</strong>
+              Verifiable Core: <strong>Name Harmony, Phone Numbers &amp; Practical Flow</strong>
             </div>
           </div>
         </div>
@@ -716,7 +708,7 @@
         </div>
 
         <div class="services-grid">
-          <!-- Service 1: Vastu Shastra (FIRST!) -->
+          <!-- Service 1: Vastu Shastra -->
           <div class="service-card" id="card-vastu">
             <div class="service-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -724,75 +716,51 @@
                 <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
             </div>
-            <span
-              style="font-family: var(--font-serif-title); font-size: 0.84rem; color: var(--kesari-primary); font-weight: 700; margin-bottom: 0.3rem;">॥
-              स्थापत्य वेद एवं वास्तु ॥</span>
+            <span class="service-sanskrit">॥ स्थापत्य वेद एवं वास्तु ॥</span>
             <h3 class="service-title">Vastu Shastra</h3>
             <p class="service-lead">
-              16-zone environmental energy balancing for homes, plots, commercial offices, and industrial layouts
-              using 100% non-destructive scientific methods.
+              Fix your home and workspace energy without breaking walls. Balance how your family rests, focuses, and earns every day.
             </p>
-
-            <!-- Vastu-Astro Golden Tidbits Callout -->
-            <div class="card-vastu-tidbits-badge">
-              <span class="tidbit-pill">⚠️ Avoid Toilets in North-East (Ishanya)</span>
-              <span class="tidbit-pill">⚠️ Avoid Main Door in South-West (Nairutya)</span>
-              <span class="tidbit-pill-remedy">✦ 100% Non-Destructive Energy Balancing</span>
-            </div>
 
             <ul class="service-feature-list">
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Residential Griha Vastu (Flats, Bungalows, Farmhouses)</span>
+                <span class="feature-icon">🎒</span>
+                <span><strong>Kids' Study &amp; Focus:</strong> Move desks out of distraction &amp; laziness zones into natural concentration directions.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Open Land, Commercial Plot & Industrial Grid Assessment</span>
+                <span class="feature-icon">🛌</span>
+                <span><strong>Sleep &amp; Health:</strong> Fix bed orientations causing morning tiredness, restlessness, and recurring sickness.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Directional Elemental Diagnostics (Pancha Mahabhuta)</span>
+                <span class="feature-icon">💰</span>
+                <span><strong>Stop Money Drains:</strong> Correct toilets in North-East or main doors in South-West that silently leak savings.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Metallic Strips, Pyramids & Color Energy Alignment</span>
-              </li>
-              <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>100% Non-Destructive Solutions (No Demolition Required)</span>
+                <span class="feature-icon">🔨</span>
+                <span><strong>Zero Demolition:</strong> 100% non-destructive cures using metallic strips and elemental color balancing.</span>
               </li>
             </ul>
+
             <div class="service-card-footer">
               <div class="service-price-tag">
-                <span class="price-label">Format / Duration</span>
+                <span class="price-label">Format / Deliverable</span>
                 <span class="price-val">Blueprint Audit + Video Roadmap</span>
               </div>
             </div>
             <div class="service-actions-group" style="margin-top: 1.2rem;">
-              <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20Trivedi%20ji,%20I%20would%20like%20to%20consult%20regarding%20Vastu%20Shastra%20for%20my%20plot/home/office."
+              <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20Trivedi%20ji,%20I%20would%20like%20to%20consult%20regarding%20Vastu%20Shastra%20for%20my%20home/office."
                 target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp">
                 <svg viewBox="0 0 24 24">
                   <path
                     d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.838.814 2.796.814 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.814-1.238l-7.186 1.886 1.919-7.009c-.86-1.488-1.352-3.218-1.352-5.053 0-5.518 4.482-10 10-10s10 4.482 10 10z" />
                 </svg>
-                Inquire on WhatsApp (+91 91525 17036)
+                Inquire on WhatsApp
               </a>
-              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('vastu')">Fill Intake
-                Details</button>
+              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('vastu')">Fill Intake Details</button>
             </div>
           </div>
 
-          <!-- Service 2: Vedic Astrology & Yajna/Fire Sacrifice -->
+          <!-- Service 2: Vedic Astrology -->
           <div class="service-card" id="card-astrology">
             <div class="service-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -800,68 +768,47 @@
                 <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" />
               </svg>
             </div>
-            <span
-              style="font-family: var(--font-serif-title); font-size: 0.84rem; color: var(--kesari-primary); font-weight: 700; margin-bottom: 0.3rem;">॥
-              ज्योतिष शास्त्र ॥</span>
+            <span class="service-sanskrit">॥ ज्योतिष शास्त्र ॥</span>
             <h3 class="service-title">Vedic Astrology</h3>
             <p class="service-lead">
-              Precision natal chart analysis, career inflection timing, Kundali Milan synastry, and authentic Vedic
-              Yajna / Sacred Fire Sacrifice remediation.
+              Understand your personal timing so you stop fighting closed doors and make your next life move with clarity.
             </p>
-
-            <div class="astro-yajna-badge">
-              🔥 Vedic Yajna & Fire Sacrifice Remedies Available
-            </div>
 
             <ul class="service-feature-list">
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Full Natal Kundali & D-9 Navamsha / D-10 Dasamsa Charts</span>
+                <span class="feature-icon">⏳</span>
+                <span><strong>Know Your Timing:</strong> Know when to take bold career leaps and when to hold back and consolidate.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Career, Business Venture & Financial Timing Windows</span>
+                <span class="feature-icon">💼</span>
+                <span><strong>Career Crossroads:</strong> Objective answers on job change vs. business and promotion windows.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Kundali Milan & Relationship Emotional Compatibility</span>
+                <span class="feature-icon">❤️</span>
+                <span><strong>Marriage &amp; Relationships:</strong> Understand mutual temperaments and resolve friction with compassion.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Vimshottari Dasha Cycles & Gochar Transit Navigation</span>
-              </li>
-              <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span><strong>Vedic Yajna & Fire Sacrifice (Homa):</strong> Navagraha dosha shanti & purification</span>
+                <span class="feature-icon">🔥</span>
+                <span><strong>Vedic Yajna (Homa):</strong> Authentic sacred fire remedies to dissolve persistent roadblocks and mental static.</span>
               </li>
             </ul>
+
             <div class="service-card-footer">
               <div class="service-price-tag">
-                <span class="price-label">Format / Duration</span>
-                <span class="price-val">60 - 75 Mins • 1-on-1 Video</span>
+                <span class="price-label">Format / Deliverable</span>
+                <span class="price-val">60 - 75 Mins • 1-on-1 Video Session</span>
               </div>
             </div>
             <div class="service-actions-group" style="margin-top: 1.2rem;">
-              <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20Trivedi%20ji,%20I%20would%20like%20to%20consult%20regarding%20Vedic%20Astrology,%20Kundali%20Analysis,%20and%20Yajna%20Remedies."
+              <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20Trivedi%20ji,%20I%20would%20like%20to%20consult%20regarding%20Vedic%20Astrology%20and%20Timing."
                 target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp">
                 <svg viewBox="0 0 24 24">
                   <path
                     d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.838.814 2.796.814 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.814-1.238l-7.186 1.886 1.919-7.009c-.86-1.488-1.352-3.218-1.352-5.053 0-5.518 4.482-10 10-10s10 4.482 10 10z" />
                 </svg>
-                Inquire on WhatsApp (+91 91525 17036)
+                Inquire on WhatsApp
               </a>
-              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('astrology')">Fill
-                Intake Details</button>
+              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('astrology')">Fill Intake Details</button>
             </div>
           </div>
 
@@ -873,67 +820,51 @@
                 <path d="M7 8h4M9 8v8M13 16l4-8M17 16l-4-8" />
               </svg>
             </div>
-            <span
-              style="font-family: var(--font-serif-title); font-size: 0.84rem; color: var(--kesari-primary); font-weight: 700; margin-bottom: 0.3rem;">॥
-              अंक शास्त्र ॥</span>
+            <span class="service-sanskrit">॥ अंक शास्त्र ॥</span>
             <h3 class="service-title">Astro-Numerology</h3>
             <p class="service-lead">
-              Core vibrational resonance analysis, name spelling optimization, business brand auditing, and personal
-              year milestone cycles.
+              Tune your name and everyday numbers to match your birth date — just like tuning an instrument for effortless flow.
             </p>
+
             <ul class="service-feature-list">
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Mulank (Birth), Bhagyank (Destiny) & Namank Calculations</span>
+                <span class="feature-icon">✍️</span>
+                <span><strong>Name Spelling Tuning:</strong> Minor letter adjustments for personal or child names to remove daily friction.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Personal & Brand Name Acoustic Frequency Audit</span>
+                <span class="feature-icon">📱</span>
+                <span><strong>Phone &amp; Vehicle Numbers:</strong> Check whether your daily mobile or car number supports you or creates delays.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Chaldean & Pythagorean Harmonic Alignment</span>
+                <span class="feature-icon">🏢</span>
+                <span><strong>Business &amp; Brand Naming:</strong> Choose company or brand names that naturally attract clients and trust.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Personal Year Cycle & Major Career Milestone Timing</span>
-              </li>
-              <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Optimized Signature, Mobile & Documentation Strategy</span>
+                <span class="feature-icon">📅</span>
+                <span><strong>Personal Year Theme:</strong> Understand what this year asks of you — to build, launch, invest, or rest.</span>
               </li>
             </ul>
+
             <div class="service-card-footer">
               <div class="service-price-tag">
-                <span class="price-label">Format / Duration</span>
-                <span class="price-val">45 - 60 Mins • 1-on-1 Video</span>
+                <span class="price-label">Format / Deliverable</span>
+                <span class="price-val">45 - 60 Mins • 1-on-1 Video Session</span>
               </div>
             </div>
             <div class="service-actions-group" style="margin-top: 1.2rem;">
-              <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20Trivedi%20ji,%20I%20would%20like%20to%20consult%20regarding%20Astro-Numerology%20and%20Name%20Alignment."
+              <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20Trivedi%20ji,%20I%20would%20like%20to%20consult%20regarding%20Astro-Numerology."
                 target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp">
                 <svg viewBox="0 0 24 24">
                   <path
                     d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.838.814 2.796.814 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.814-1.238l-7.186 1.886 1.919-7.009c-.86-1.488-1.352-3.218-1.352-5.053 0-5.518 4.482-10 10-10s10 4.482 10 10z" />
                 </svg>
-                Inquire on WhatsApp (+91 91525 17036)
+                Inquire on WhatsApp
               </a>
-              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('numerology')">Fill
-                Intake Details</button>
+              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('numerology')">Fill Intake Details</button>
             </div>
           </div>
 
-          <!-- Service 4: Spiritual & Life Counsellor (NEW OPTION!) -->
+          <!-- Service 4: Spiritual & Life Counsellor -->
           <div class="service-card" id="card-counsellor">
             <div class="service-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -943,50 +874,35 @@
                 <line x1="15" y1="9" x2="15.01" y2="9" />
               </svg>
             </div>
-            <span
-              style="font-family: var(--font-serif-title); font-size: 0.84rem; color: #0d9488; font-weight: 700; margin-bottom: 0.3rem;">॥
-              परामर्श एवं जीवन मार्गदर्शन ॥</span>
-            <h3 class="service-title">Spiritual & Life Counsellor</h3>
+            <span class="service-sanskrit" style="color: #0d9488;">॥ परामर्श एवं जीवन मार्गदर्शन ॥</span>
+            <h3 class="service-title">Life &amp; Mind Counsellor</h3>
             <p class="service-lead">
-              A confidential, compassionate 1-on-1 counseling space synthesizing Vedic psychology, cognitive clarity, and
-              rational problem-solving for life crossroads, burnout, and inner peace.
+              A private, compassionate space to untangle heavy choices, chronic burnout, and find genuine inner peace.
             </p>
+
             <ul class="service-feature-list">
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Confidential 1-on-1 Emotional & Life Direction Counseling</span>
+                <span class="feature-icon">🧭</span>
+                <span><strong>Decision Paralysis:</strong> Clear, calm thinking when torn between two life paths or tough dilemmas.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Navigating Career Crossroads, Decision Paralysis & Life Inflections</span>
+                <span class="feature-icon">🌿</span>
+                <span><strong>Burnout &amp; Stress Relief:</strong> De-escalate mental exhaustion through grounded Vedic psychology.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Vedic Psychology: Harmonizing Satva, Rajas & Tamas Gunis</span>
+                <span class="feature-icon">🤝</span>
+                <span><strong>Healthy Boundaries:</strong> Handle family or workplace friction without guilt or confrontation.</span>
               </li>
               <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>De-escalating Stress & Burnout through Rational Mindfulness</span>
-              </li>
-              <li class="service-feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Actionable Daily Sadhana, Dhyana & Emotional Equilibrium</span>
+                <span class="feature-icon">🧘</span>
+                <span><strong>Daily Inner Peace:</strong> Simple mindfulness and mental frameworks that fit into your everyday life.</span>
               </li>
             </ul>
+
             <div class="service-card-footer">
               <div class="service-price-tag">
-                <span class="price-label">Format / Duration</span>
-                <span class="price-val">60 Mins • 1-on-1 Private Video</span>
+                <span class="price-label">Format / Deliverable</span>
+                <span class="price-val">60 Mins • Private 1-on-1 Video Session</span>
               </div>
             </div>
             <div class="service-actions-group" style="margin-top: 1.2rem;">
@@ -996,10 +912,239 @@
                   <path
                     d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.838.814 2.796.814 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.814-1.238l-7.186 1.886 1.919-7.009c-.86-1.488-1.352-3.218-1.352-5.053 0-5.518 4.482-10 10-10s10 4.482 10 10z" />
                 </svg>
-                Inquire on WhatsApp (+91 91525 17036)
+                Inquire on WhatsApp
               </a>
-              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('counsellor')">Fill
-                Intake Details</button>
+              <button class="btn btn-secondary" style="width: 100%;" onclick="selectServiceAndBook('counsellor')">Fill Intake Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Astrology Life Dimension Tabs Component (Work, Relationships, Health, Money, Timing, The Next Move) -->
+        <div class="astrology-tabs-wrapper" id="astrology-life-tabs">
+          <div class="astrology-tabs-header">
+            <span class="astro-tabs-tag">॥ जीवन के ६ मुख्य आयाम ॥ • Higher Dimensional Applied Astrology</span>
+            <h3 class="astrology-tabs-title">Where Do You Need <span class="sacred-gradient-text">Clarity Today?</span></h3>
+            <p class="astrology-tabs-subtitle">
+              Astrology is a Higher Dimensional Science that applies in each and every life — highly verifiable in daily experiences. Select your life area to see how cosmic timing and planetary patterns directly influence your realities and immediate decisions.
+            </p>
+          </div>
+
+          <div class="astro-tabs-nav">
+            <button type="button" class="astro-tab-btn active" data-tab="tab-work">
+              💼 Work &amp; Career
+            </button>
+            <button type="button" class="astro-tab-btn" data-tab="tab-relationships">
+              ❤️ Relationships
+            </button>
+            <button type="button" class="astro-tab-btn" data-tab="tab-health">
+              🌿 Health &amp; Vitality
+            </button>
+            <button type="button" class="astro-tab-btn" data-tab="tab-money">
+              💰 Money &amp; Wealth
+            </button>
+            <button type="button" class="astro-tab-btn" data-tab="tab-timing">
+              ⏳ Timing &amp; Cycles
+            </button>
+            <button type="button" class="astro-tab-btn" data-tab="tab-nextmove">
+              🎯 The Next Move
+            </button>
+          </div>
+
+          <!-- Tab 1: Work -->
+          <div class="astro-tab-panel active" id="tab-work">
+            <div class="astro-tab-grid">
+              <div class="astro-tab-col-left">
+                <h4 class="astro-tab-col-title">💼 Career, Promotion &amp; Professional Direction</h4>
+                <p class="astro-tab-col-desc">
+                  Are you feeling stuck in your current role, contemplating a risky career switch, or wondering whether it is time to start your own business? Career moves shouldn't be guesswork.
+                </p>
+                <span class="astro-tab-scenarios-title">Common Everyday Crossroads We Resolve:</span>
+                <ul class="astro-tab-scenarios">
+                  <li><span class="bullet">✦</span> <strong>Should I stay or switch jobs?</strong> Reading your 10th house (Karma Bhava) and D-10 Dasamsa to see if your current company has further growth or if a move brings recognition.</li>
+                  <li><span class="bullet">✦</span> <strong>Job vs. Business:</strong> Determining whether your planetary alignments support entrepreneurial risk or steady executive growth.</li>
+                  <li><span class="bullet">✦</span> <strong>Workplace Friction &amp; Politics:</strong> Understanding 6th house influences (hidden opposition) and remedies to shield your peace.</li>
+                  <li><span class="bullet">✦</span> <strong>Appraisal &amp; Promotion Windows:</strong> Knowing exactly which months favor salary negotiations and leadership elevation.</li>
+                </ul>
+              </div>
+              <div class="astro-tab-col-right">
+                <div class="astro-tab-takeaway">
+                  <strong>Higher Dimensional Science in Action:</strong>
+                  When you align career decisions with your operating planetary period (Dasha), you stop fighting closed doors and walk straight into open opportunities with clarity.
+                </div>
+                <div class="service-actions-group">
+                  <button class="btn btn-primary" onclick="consultAstroTopic('Career & Work Timing')">
+                    Get Clarity on Work &amp; Career
+                  </button>
+                  <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20ji,%20I%20am%20at%20a%20career%20crossroads%20and%20would%20like%20guidance%20on%20my%20work%20timing." target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp" style="justify-content: center;">
+                    Ask Directly on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Relationships -->
+          <div class="astro-tab-panel" id="tab-relationships">
+            <div class="astro-tab-grid">
+              <div class="astro-tab-col-left">
+                <h4 class="astro-tab-col-title">❤️ Marriage, Compatibility &amp; Family Harmony</h4>
+                <p class="astro-tab-col-desc">
+                  Relationships thrive when both partners understand each other's emotional wiring. Beyond conventional Guna Milan, we look at emotional temperament synastry, communication styles, and mutual respect.
+                </p>
+                <span class="astro-tab-scenarios-title">Common Everyday Crossroads We Resolve:</span>
+                <ul class="astro-tab-scenarios">
+                  <li><span class="bullet">✦</span> <strong>Recurring Arguments &amp; Misunderstandings:</strong> Mapping Moon and Mercury placements to reveal why communication breaks down and how to bridge it.</li>
+                  <li><span class="bullet">✦</span> <strong>Kundali Milan Beyond Numbers:</strong> A holistic compatibility analysis focusing on emotional longevity, health, and mutual growth rather than fear-based scorekeeping.</li>
+                  <li><span class="bullet">✦</span> <strong>Timing of Marriage:</strong> Identifying 7th house activation windows to overcome unexplained delays and match-finding fatigue.</li>
+                  <li><span class="bullet">✦</span> <strong>In-laws &amp; Family Dynamics:</strong> Healing strained domestic dynamics by adjusting spatial and emotional triggers.</li>
+                </ul>
+              </div>
+              <div class="astro-tab-col-right">
+                <div class="astro-tab-takeaway">
+                  <strong>Higher Dimensional Science in Action:</strong>
+                  Vedic astrology does not doom relationships; it reveals why someone reacts the way they do, replacing resentment with deep understanding and compassion.
+                </div>
+                <div class="service-actions-group">
+                  <button class="btn btn-primary" onclick="consultAstroTopic('Relationships & Marriage Harmony')">
+                    Explore Relationship Harmony
+                  </button>
+                  <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20ji,%20I%20would%20like%20guidance%20regarding%20relationship%20compatibility%20and%20family%20harmony." target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp" style="justify-content: center;">
+                    Ask Directly on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Health -->
+          <div class="astro-tab-panel" id="tab-health">
+            <div class="astro-tab-grid">
+              <div class="astro-tab-col-left">
+                <h4 class="astro-tab-col-title">🌿 Vitality, Chronic Fatigue &amp; Stress Windows</h4>
+                <p class="astro-tab-col-desc">
+                  Physical vitality is closely tied to your planetary periods and living environment. Discover why you feel drained during certain months and how to protect your mental and physical stamina.
+                </p>
+                <span class="astro-tab-scenarios-title">Common Everyday Crossroads We Resolve:</span>
+                <ul class="astro-tab-scenarios">
+                  <li><span class="bullet">✦</span> <strong>Unexplained Fatigue &amp; Low Energy:</strong> Identifying 6th/8th house planetary transit pressures that manifest as chronic burnout or lethargy.</li>
+                  <li><span class="bullet">✦</span> <strong>Sleep Restlessness &amp; Bedroom Vastu:</strong> Combining your Moon chart with your bed placement to eliminate night waking and morning tiredness.</li>
+                  <li><span class="bullet">✦</span> <strong>Stress Vulnerability Periods:</strong> Foreseeing high-stress windows so you can plan rest, simplify work commitments, and avoid physical exhaustion.</li>
+                  <li><span class="bullet">✦</span> <strong>Ayurvedic &amp; Planetary Lifestyle Balancing:</strong> Tailored daily routines, dietary alignment, and simple Dhyana to keep your energy centered.</li>
+                </ul>
+              </div>
+              <div class="astro-tab-col-right">
+                <div class="astro-tab-takeaway">
+                  <strong>Higher Dimensional Science in Action:</strong>
+                  Knowing when your body is in an energetically sensitive season empowers you to take preventive rest rather than pushing to the point of clinical breakdown.
+                </div>
+                <div class="service-actions-group">
+                  <button class="btn btn-primary" onclick="consultAstroTopic('Health & Stress Windows')">
+                    Check Health &amp; Vitality Timing
+                  </button>
+                  <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20ji,%20I%20would%20like%20to%20understand%20my%20health%20and%20stress%20timing%20windows." target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp" style="justify-content: center;">
+                    Ask Directly on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Money -->
+          <div class="astro-tab-panel" id="tab-money">
+            <div class="astro-tab-grid">
+              <div class="astro-tab-col-left">
+                <h4 class="astro-tab-col-title">💰 Wealth Retention, Investments &amp; Financial Peace</h4>
+                <p class="astro-tab-col-desc">
+                  Money isn't just about how hard you work — it's also about retaining what you earn and knowing when financial doors swing open or close. Stop unexplained financial leaks.
+                </p>
+                <span class="astro-tab-scenarios-title">Common Everyday Crossroads We Resolve:</span>
+                <ul class="astro-tab-scenarios">
+                  <li><span class="bullet">✦</span> <strong>High Earning but No Savings:</strong> Analyzing 2nd house (Accumulated Wealth) vs 12th house (Expenditures) to identify invisible wealth leaks.</li>
+                  <li><span class="bullet">✦</span> <strong>Investment &amp; Speculation Timing:</strong> Reading Jupiter and 5th/9th houses to determine safe investment horizons and avoid speculative traps.</li>
+                  <li><span class="bullet">✦</span> <strong>Recovering Stuck Money &amp; Debts:</strong> Practical timing and remedies for loan settlement, property disputes, or delayed payments.</li>
+                  <li><span class="bullet">✦</span> <strong>Property Purchase Windows:</strong> Identifying favorable 4th house alignments for buying a home, plot, or commercial real estate.</li>
+                </ul>
+              </div>
+              <div class="astro-tab-col-right">
+                <div class="astro-tab-takeaway">
+                  <strong>Higher Dimensional Science in Action:</strong>
+                  Wealth in Vedic science is about stability and flow. Aligning your major financial decisions with favorable Dasha periods prevents costly miscalculations.
+                </div>
+                <div class="service-actions-group">
+                  <button class="btn btn-primary" onclick="consultAstroTopic('Financial Cycles & Wealth')">
+                    Audit Financial Timing &amp; Wealth
+                  </button>
+                  <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20ji,%20I%20am%20seeking%20clarity%20on%20my%20financial%20cycles%20and%20wealth%20timing." target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp" style="justify-content: center;">
+                    Ask Directly on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: Timing -->
+          <div class="astro-tab-panel" id="tab-timing">
+            <div class="astro-tab-grid">
+              <div class="astro-tab-col-left">
+                <h4 class="astro-tab-col-title">⏳ Life Cycles, Dasha Periods &amp; Cosmic Seasons</h4>
+                <p class="astro-tab-col-desc">
+                  Timing is everything in life. Planting seeds in winter brings frustration, but planting in spring brings abundance. Your planetary Dasha reveals exactly which life season you are living in.
+                </p>
+                <span class="astro-tab-scenarios-title">Common Everyday Crossroads We Resolve:</span>
+                <ul class="astro-tab-scenarios">
+                  <li><span class="bullet">✦</span> <strong>Why is Everything Taking So Long?</strong> Identifying Saturn (Shani) or Rahu transit friction and when the cloud lifts.</li>
+                  <li><span class="bullet">✦</span> <strong>Golden Expansion Windows:</strong> Recognizing when Jupiter (Guru) aspects your key houses, signaling the moment to launch projects.</li>
+                  <li><span class="bullet">✦</span> <strong>Relocation &amp; Moving Abroad:</strong>Pinpointing the exact timing window for visa clearances, overseas job offers, and comfortable relocations.</li>
+                  <li><span class="bullet">✦</span> <strong>Personal Year Rhythm:</strong> Blending your Vedic Dasha with your numerological personal year for clear month-by-month clarity.</li>
+                </ul>
+              </div>
+              <div class="astro-tab-col-right">
+                <div class="astro-tab-takeaway">
+                  <strong>Higher Dimensional Science in Action:</strong>
+                  Understanding your timing takes away the anxiety of comparison. When you know your sunrise is coming, you navigate the night with patience and strength.
+                </div>
+                <div class="service-actions-group">
+                  <button class="btn btn-primary" onclick="consultAstroTopic('Life Timing & Dasha Cycles')">
+                    Decode My Life Timing
+                  </button>
+                  <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20ji,%20I%20would%20like%20to%20decode%20my%20current%20planetary%20timing%20and%20Dasha%20cycle." target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp" style="justify-content: center;">
+                    Ask Directly on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 6: The Next Move -->
+          <div class="astro-tab-panel" id="tab-nextmove">
+            <div class="astro-tab-grid">
+              <div class="astro-tab-col-left">
+                <h4 class="astro-tab-col-title">🎯 The Next Move: Strategic Clarity for Immediate Decisions</h4>
+                <p class="astro-tab-col-desc">
+                  Standing at an urgent fork in the road? You don't need fatalistic predictions or vague riddles. You need an objective, verifiable strategic roadmap for your immediate next step.
+                </p>
+                <span class="astro-tab-scenarios-title">Common Everyday Crossroads We Resolve:</span>
+                <ul class="astro-tab-scenarios">
+                  <li><span class="bullet">✦</span> <strong>Two Competing Offers:</strong> Objective astrological evaluation of which company or partner brings long-term peace versus short-term hype.</li>
+                  <li><span class="bullet">✦</span> <strong>Should I Sign the Contract Now?</strong> Checking the transit moon, planetary hours (Hora), and upcoming retrogrades before putting pen to paper.</li>
+                  <li><span class="bullet">✦</span> <strong>Breaking Decision Paralysis:</strong> Translating complex planetary charts into a clear 3-point action plan you can verify immediately.</li>
+                  <li><span class="bullet">✦</span> <strong>Non-Destructive Action Remedies:</strong> Simple behavioral shifts, directional alignments, and authentic Vedic Yajna remedies to clear the path forward.</li>
+                </ul>
+              </div>
+              <div class="astro-tab-col-right">
+                <div class="astro-tab-takeaway">
+                  <strong>Higher Dimensional Science in Action:</strong>
+                  Dr. Rahul Trivedi (Ph.D., IIT-Madras) approaches every consultation like a strategic research session — giving you clear, actionable steps you can test and verify yourself.
+                </div>
+                <div class="service-actions-group">
+                  <button class="btn btn-primary" onclick="consultAstroTopic('The Next Move Roadmap')">
+                    Get My Next Move Roadmap
+                  </button>
+                  <a href="https://wa.me/919152517036?text=Namaste%20Dr.%20Rahul%20ji,%20I%20am%20at%20a%20critical%20crossroads%20and%20need%20clarity%20on%20my%20next%20move." target="_blank" rel="noopener noreferrer" class="btn-sm-whatsapp" style="justify-content: center;">
+                    Ask Directly on WhatsApp
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1319,6 +1464,23 @@
           </p>
         </div>
 
+        <!-- Category Filter Bar for Quick Inquiry Context -->
+        <div class="intake-category-bar">
+          <span class="intake-category-label">Filter Intake by Life Area / Discipline</span>
+          <div class="intake-chips-grid">
+            <button type="button" class="intake-chip-btn active" data-category="all">✦ All Disciplines</button>
+            <button type="button" class="intake-chip-btn" data-category="vastu">🏡 Vastu &amp; Living Spaces</button>
+            <button type="button" class="intake-chip-btn" data-category="astrology">🪐 Vedic Astrology</button>
+            <button type="button" class="intake-chip-btn" data-category="numerology">🔢 Name &amp; Numbers</button>
+            <button type="button" class="intake-chip-btn" data-category="counsellor">🧭 Life Counseling</button>
+            <button type="button" class="intake-chip-btn" data-category="work">💼 Work &amp; Career</button>
+            <button type="button" class="intake-chip-btn" data-category="relationships">❤️ Relationships</button>
+            <button type="button" class="intake-chip-btn" data-category="kids">🎒 Kids &amp; Study Zones</button>
+            <button type="button" class="intake-chip-btn" data-category="health">🛌 Health &amp; Sleep</button>
+            <button type="button" class="intake-chip-btn" data-category="money">💰 Money &amp; Wealth</button>
+          </div>
+        </div>
+
         <div class="wizard-card">
           <!-- Wizard Step Progress Bar -->
           <div class="wizard-progress-bar">
@@ -1346,7 +1508,7 @@
           <form id="booking-wizard-form" onsubmit="return false;">
             <!-- STEP 1: Select Service -->
             <div class="wizard-step-panel active" id="step-panel-1">
-              <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; color: var(--text-white);">Step
+              <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center; color: var(--peak-ink-deep);">Step
                 1: Choose Your Consultation Focus</h3>
 
               <div class="service-select-grid">
@@ -1355,21 +1517,19 @@
                   <div class="select-card-radio"></div>
                   <h4 class="select-card-title">Vastu Shastra Consultation</h4>
                   <div class="select-card-meta">Comprehensive Layout & Spatial Audit</div>
-                  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
-                    Residential homes, plots & commercial spaces. 16-zone directional analysis with 100% non-destructive
-                    remedies (NE toilet / SW door corrections).
+                  <p style="font-size: 0.88rem; color: var(--peak-muted); margin-bottom: 0.5rem;">
+                    Residential homes, kids' study zones, sleep orientation & commercial workspaces. 100% non-destructive balancing (NE toilet / SW door cures without demolition).
                   </p>
                   <input type="radio" name="wizard-service" value="vastu" checked style="display: none;">
                 </div>
 
-                <!-- Service 2: Vedic Astrology & Yajna -->
+                <!-- Service 2: Vedic Astrology & Timing -->
                 <div class="service-select-card" data-service-id="astrology">
                   <div class="select-card-radio"></div>
-                  <h4 class="select-card-title">Vedic Astrology & Yajna</h4>
+                  <h4 class="select-card-title">Vedic Astrology & Timing</h4>
                   <div class="select-card-meta">60 - 75 Mins • 1-on-1 Deep-Dive Video</div>
-                  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
-                    Natal Kundali, D-9/D-10 breakdown, career inflection timing, and authentic Vedic Yajna / Sacred Fire
-                    Sacrifice remedies.
+                  <p style="font-size: 0.88rem; color: var(--peak-muted); margin-bottom: 0.5rem;">
+                    Natal Kundali, career crossroads, marriage harmony, wealth windows, and authentic Vedic Yajna (Homa) remedies.
                   </p>
                   <input type="radio" name="wizard-service" value="astrology" style="display: none;">
                 </div>
@@ -1377,10 +1537,10 @@
                 <!-- Service 3: Numerology -->
                 <div class="service-select-card" data-service-id="numerology">
                   <div class="select-card-radio"></div>
-                  <h4 class="select-card-title">Astro-Numerology Audit</h4>
+                  <h4 class="select-card-title">Astro-Numerology Tuning</h4>
                   <div class="select-card-meta">45 - 60 Mins • 1-on-1 Video Session</div>
-                  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
-                    Mulank, Bhagyank & Namank, personal & business brand frequency audit, and milestone cycle planning.
+                  <p style="font-size: 0.88rem; color: var(--peak-muted); margin-bottom: 0.5rem;">
+                    Name spelling harmony, everyday mobile and vehicle number tuning, brand frequency, and personal year cycles.
                   </p>
                   <input type="radio" name="wizard-service" value="numerology" style="display: none;">
                 </div>
@@ -1390,8 +1550,8 @@
                   <div class="select-card-radio"></div>
                   <h4 class="select-card-title">Spiritual & Life Counsellor</h4>
                   <div class="select-card-meta">60 Mins • 1-on-1 Confidential Video</div>
-                  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
-                    Confidential guidance for emotional clarity, decision paralysis at life crossroads, stress de-escalation & Vedic wisdom.
+                  <p style="font-size: 0.88rem; color: var(--peak-muted); margin-bottom: 0.5rem;">
+                    A safe, confidential space for decision paralysis, chronic burnout, emotional healing, and practical inner peace.
                   </p>
                   <input type="radio" name="wizard-service" value="counsellor" style="display: none;">
                 </div>
@@ -1408,6 +1568,7 @@
               </p>
 
               <div class="intake-form-grid">
+                <!-- Universal Contact Fields (No Dropdowns) -->
                 <div class="form-group">
                   <label class="form-label" for="intake-name">Full Name <span class="req">*</span></label>
                   <input type="text" id="intake-name" class="form-input" placeholder="e.g. Anand Sharma" required>
@@ -1419,112 +1580,195 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="intake-email">Email Address</label>
+                  <label class="form-label" for="intake-email">Email Address (Optional)</label>
                   <input type="email" id="intake-email" class="form-input" placeholder="e.g. anand@example.com">
                 </div>
 
-                <!-- Fields for Astrology & Numerology & Counseling -->
-                <div class="form-group field-birth-only">
-                  <label class="form-label" for="intake-dob">Date of Birth <span class="req">*</span></label>
-                  <input type="date" id="intake-dob" class="form-input">
+                <div class="form-group">
+                  <label class="form-label" for="intake-city">City / Location <span class="req">*</span></label>
+                  <input type="text" id="intake-city" class="form-input" placeholder="e.g. Mumbai, Delhi, Bengaluru" required>
                 </div>
 
-                <div class="form-group field-birth-only">
-                  <label class="form-label" for="intake-tob">Exact Time of Birth</label>
-                  <input type="time" id="intake-tob" class="form-input">
-                  <span class="form-hint">Hospital record / birth certificate time is ideal.</span>
-                </div>
+                <!-- ==========================================
+                     SECTION 1: VASTU SHASTRA (Active if Vastu selected)
+                     ========================================== -->
+                <div class="discipline-section active" id="section-vastu">
+                  <div class="discipline-section-header">
+                    <span class="discipline-section-title">
+                      🏡 Vastu Shastra &amp; Living Space Details
+                    </span>
+                    <span class="discipline-section-badge">॥ स्थापत्य वेद एवं वास्तु ॥</span>
+                  </div>
 
-                <div class="form-group field-birth-only">
-                  <label class="form-label" for="intake-accuracy">Time Accuracy</label>
-                  <select id="intake-accuracy" class="form-select">
-                    <option value="Exact Hospital Record">Exact Hospital Record (within 5 mins)</option>
-                    <option value="Approximate within 15 mins">Approximate (within 15 mins)</option>
-                    <option value="Approximate within 30 mins">Approximate (within 30 mins)</option>
-                    <option value="Only Date Known">Only Date Known (Prashna Kundali)</option>
-                  </select>
-                </div>
+                  <div class="vastu-intake-tip-banner" style="margin-bottom: 1.2rem;">
+                    <strong>💡 Non-Destructive Solutions:</strong> Dr. Rahul resolves energy imbalances (including North-East toilets &amp; South-West entrances) using 100% non-destructive elemental strips and directional tuning — zero demolition of walls.
+                  </div>
 
-                <!-- Fields for Vastu Only -->
-                <div class="form-group field-vastu-only form-group-full">
-                  <div class="vastu-intake-tip-banner">
-                    <strong>💡 Vastu-Astro Tidbit:</strong> Facing layout challenges like a toilet in North-East (Ishanya) or main entrance in South-West (Nairutya)? Don't worry — Dr. Rahul provides 100% non-destructive corrections without breaking walls or demolition.
+                  <div class="discipline-grid">
+                    <div class="form-group">
+                      <label class="form-label" for="vastu-prop-type">Property / Space Type <span class="req">*</span></label>
+                      <select id="vastu-prop-type" class="form-select">
+                        <option value="Residential Apartment / Flat" selected>Residential Apartment / Flat</option>
+                        <option value="Independent Bungalow / Villa">Independent Bungalow / Villa</option>
+                        <option value="Commercial Office / Workspace">Commercial Office / Workspace</option>
+                        <option value="Commercial Shop / Retail Outlet">Commercial Shop / Retail Outlet</option>
+                        <option value="Factory / Industrial Layout">Factory / Industrial Layout</option>
+                        <option value="Open Plot / Land Assessment">Open Plot / Land Assessment</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="vastu-prop-dir">Main Entrance Facing</label>
+                      <select id="vastu-prop-dir" class="form-select">
+                        <option value="North Facing" selected>North Facing</option>
+                        <option value="North-East (Ishanya) Facing">North-East (Ishanya) Facing</option>
+                        <option value="East Facing">East Facing</option>
+                        <option value="South-East (Agneya) Facing">South-East (Agneya) Facing</option>
+                        <option value="South Facing">South Facing</option>
+                        <option value="South-West (Nairutya) Facing">South-West (Nairutya) Facing</option>
+                        <option value="West Facing">West Facing</option>
+                        <option value="North-West (Vayavya) Facing">North-West (Vayavya) Facing</option>
+                        <option value="Direction to be verified">Direction to be verified</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                      <label class="form-label" for="vastu-focus">Primary Vastu Concern</label>
+                      <select id="vastu-focus" class="form-select">
+                        <option value="Kids' Study Zone &amp; Overcoming Restlessness/Distraction" selected>🎒 Kids' Study Zone &amp; Overcoming Distraction / Laziness</option>
+                        <option value="Health, Sickness &amp; Restful Sleep Placement">🛌 Health, Morning Tiredness &amp; Bed Orientation</option>
+                        <option value="Toilet in NE / Main Door in SW Non-Destructive Remedy">⚠️ Toilet in NE / Main Door in SW (Zero Demolition)</option>
+                        <option value="Residential Griha Vastu &amp; Family Well-being">🏡 Residential Home Energy Balancing &amp; Family Harmony</option>
+                        <option value="Commercial Office / Shop / Factory Growth">🏢 Commercial Office Seating &amp; Business Flow</option>
+                        <option value="Plot Assessment &amp; Land Layout Planning">📐 Buying Land / Plot Layout Assessment</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                      <label class="form-label" for="vastu-notes">Specific Property Notes or Layout Dilemmas</label>
+                      <textarea id="vastu-notes" class="form-textarea" rows="2" placeholder="e.g., Kids not sitting for study, recurring health issues, or layout questions you would like analyzed..."></textarea>
+                    </div>
                   </div>
                 </div>
 
-                <div class="form-group field-vastu-only">
-                  <label class="form-label" for="intake-property-type">Property / Space Type <span
-                      class="req">*</span></label>
-                  <select id="intake-property-type" class="form-select">
-                    <option value="Residential Apartment / Flat">Residential Apartment / Flat</option>
-                    <option value="Independent Bungalow / Villa">Independent Bungalow / Villa</option>
-                    <option value="Commercial Office / Workspace">Commercial Office / Workspace</option>
-                    <option value="Factory / Industrial Layout">Factory / Industrial Layout</option>
-                    <option value="Open Plot / Land Assessment">Open Plot / Land Assessment</option>
-                  </select>
+                <!-- ==========================================
+                     SECTION 2: VEDIC ASTROLOGY (Active if Astrology selected)
+                     ========================================== -->
+                <div class="discipline-section" id="section-astrology">
+                  <div class="discipline-section-header">
+                    <span class="discipline-section-title">
+                      🪐 Vedic Astrology &amp; Timing Details
+                    </span>
+                    <span class="discipline-section-badge">॥ ज्योतिष शास्त्र ॥</span>
+                  </div>
+
+                  <div class="discipline-grid">
+                    <div class="form-group">
+                      <label class="form-label" for="astro-dob">Date of Birth <span class="req">*</span></label>
+                      <input type="date" id="astro-dob" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="astro-tob">Time of Birth</label>
+                      <input type="time" id="astro-tob" class="form-input">
+                      <span class="form-hint">Hospital record is ideal; approximate within 15-30 mins is fine.</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="astro-pob">Place of Birth (City, State)</label>
+                      <input type="text" id="astro-pob" class="form-input" placeholder="e.g. Pune, Maharashtra (if different from current city)">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="astro-focus">Primary Question / Focus</label>
+                      <select id="astro-focus" class="form-select">
+                        <option value="The Next Move — Clarity on Immediate Crossroads" selected>🎯 The Next Move — Strategic Clarity on Immediate Crossroads</option>
+                        <option value="Career Inflection, Promotion &amp; Job vs Business Timing">💼 Career Timing, Promotion &amp; Job vs Business Window</option>
+                        <option value="Kundali Milan &amp; Relationship Compatibility">❤️ Kundali Milan &amp; Relationship Emotional Compatibility</option>
+                        <option value="Marriage Timing &amp; Auspicious Muhurat">💍 Marriage Timing &amp; Partner Compatibility</option>
+                        <option value="Financial Cycles, Investments &amp; Debt Relief">💰 Wealth Cycles, Investments &amp; Financial Peace</option>
+                        <option value="Vedic Yajna / Fire Sacrifice (Homa) &amp; Navagraha Shanti">🔥 Authentic Vedic Yajna (Homa) &amp; Navagraha Shanti</option>
+                        <option value="Moving Abroad / Relocation Timing">✈️ Relocation &amp; Overseas Opportunities</option>
+                        <option value="Child Future, Natural Talents &amp; Education">👶 Child’s Astrological Strengths &amp; Higher Education</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                      <label class="form-label" for="astro-notes">Specific Question or Crossroads</label>
+                      <textarea id="astro-notes" class="form-textarea" rows="2" placeholder="Briefly describe the career crossroads, relationship decision, or timing question you need clarity on..."></textarea>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="form-group field-vastu-only">
-                  <label class="form-label" for="intake-property-dir">Main Entrance Facing Direction</label>
-                  <select id="intake-property-dir" class="form-select">
-                    <option value="North Facing">North Facing</option>
-                    <option value="North-East (Ishanya) Facing">North-East (Ishanya) Facing</option>
-                    <option value="East Facing">East Facing</option>
-                    <option value="South-East (Agneya) Facing">South-East (Agneya) Facing</option>
-                    <option value="South Facing">South Facing</option>
-                    <option value="South-West (Nairutya) Facing">South-West (Nairutya) Facing</option>
-                    <option value="West Facing">West Facing</option>
-                    <option value="North-West (Vayavya) Facing">North-West (Vayavya) Facing</option>
-                    <option value="Direction to be verified">Direction to be verified</option>
-                  </select>
+                <!-- ==========================================
+                     SECTION 3: ASTRO-NUMEROLOGY (Active if Numerology selected)
+                     ========================================== -->
+                <div class="discipline-section" id="section-numerology">
+                  <div class="discipline-section-header">
+                    <span class="discipline-section-title">
+                      🔢 Astro-Numerology &amp; Sound Rhythm
+                    </span>
+                    <span class="discipline-section-badge">॥ अंक शास्त्र ॥</span>
+                  </div>
+
+                  <div class="discipline-grid">
+                    <div class="form-group">
+                      <label class="form-label" for="num-dob">Date of Birth <span class="req">*</span></label>
+                      <input type="date" id="num-dob" class="form-input">
+                      <span class="form-hint">Required to calculate your Mulank (Birth) and Bhagyank (Destiny).</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="num-focus">Primary Tuning Focus</label>
+                      <select id="num-focus" class="form-select">
+                        <option value="Personal Name Spelling Harmony" selected>✍️ Personal Name Spelling Harmony (smoother daily flow)</option>
+                        <option value="Business Brand Name Acoustic Frequency">🏢 Business Brand Name Frequency Optimization</option>
+                        <option value="Everyday Mobile Number &amp; Vehicle Number Tuning">📱 Everyday Phone &amp; Vehicle Number Tuning</option>
+                        <option value="Baby Naming According to Birth Rhythm">👶 Baby Naming According to Birth Rhythm</option>
+                        <option value="Personal Year Cycle &amp; Milestone Planning">📅 Personal Year Cycle &amp; Milestone Roadmap</option>
+                        <option value="Signature Alignment &amp; Professional Energy">🖋️ Signature Alignment for Confidence</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                      <label class="form-label" for="num-item">Current Spelling or Number(s) to Analyze</label>
+                      <input type="text" id="num-item" class="form-input" placeholder="e.g. Current Name: 'Rahul Trivedi' / Phone: '9876543210' / Brand: 'AstroCorp'">
+                    </div>
+
+                    <div class="form-group form-group-full">
+                      <label class="form-label" for="num-notes">Any specific changes or goals in mind?</label>
+                      <textarea id="num-notes" class="form-textarea" rows="2" placeholder="e.g., Looking for career momentum, starting a new firm, or buying a new car..."></textarea>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Common Location Fields -->
-                <div class="form-group">
-                  <label class="form-label" for="intake-city"><span class="field-birth-only">Place of Birth
-                      (City)</span><span class="field-vastu-only">Property City / Location</span>
-                    <span class="req">*</span></label>
-                  <input type="text" id="intake-city" class="form-input" placeholder="e.g. Mumbai / Delhi / Bengaluru"
-                    required>
-                </div>
+                <!-- ==========================================
+                     SECTION 4: SPIRITUAL & LIFE COUNSELLOR (Active if Counsellor selected)
+                     ========================================== -->
+                <div class="discipline-section" id="section-counsellor">
+                  <div class="discipline-section-header">
+                    <span class="discipline-section-title">
+                      🧭 Spiritual &amp; Life Guidance (1-on-1 Confidential)
+                    </span>
+                    <span class="discipline-section-badge">॥ परामर्श एवं जीवन मार्गदर्शन ॥</span>
+                  </div>
 
-                <div class="form-group">
-                  <label class="form-label" for="intake-state">State / Region & Country</label>
-                  <input type="text" id="intake-state" class="form-input" placeholder="e.g. Maharashtra, India">
-                </div>
+                  <div class="discipline-grid">
+                    <div class="form-group form-group-full">
+                      <label class="form-label" for="counsel-focus">Primary Area of Guidance</label>
+                      <select id="counsel-focus" class="form-select">
+                        <option value="Life Crossroads, Decision Paralysis &amp; Burnout Relief" selected>🧭 Navigating Major Life Crossroads &amp; Decision Paralysis</option>
+                        <option value="Stress, Chronic Anxiety &amp; Emotional Burnout">🌿 Overcoming Stress, Chronic Anxiety &amp; Burnout</option>
+                        <option value="Relationship Boundaries &amp; Emotional Healing">🤝 Relationship Boundaries &amp; Compassionate Communication</option>
+                        <option value="Spiritual Guidance &amp; Daily Mindfulness Framework">🧘 Practical Daily Mindfulness &amp; Inner Resilience</option>
+                      </select>
+                    </div>
 
-                <div class="form-group form-group-full">
-                  <label class="form-label" for="intake-focus">Primary Area of Inquiry / Questions</label>
-                  <select id="intake-focus" class="form-select">
-                    <option value="Residential Griha Vastu & Family Well-being (NE Toilet / SW Entrance Fixes)" selected>
-                      Residential Griha Vastu & Family Well-being (NE Toilet / SW Entrance Fixes)</option>
-                    <option value="Toilet in NE / Main Door in SW Vastu Remedy">Toilet in NE / Main Door in SW Vastu Remedy</option>
-                    <option value="Plot Assessment & Architectural Layout Planning">Plot Assessment & Architectural
-                      Layout Planning</option>
-                    <option value="Commercial Office / Factory Energy Balancing">Commercial Office / Factory Energy
-                      Balancing</option>
-                    <option value="Negative Energy & Vastu Clearing">Negative Energy & Vastu Clearing</option>
-                    <option value="Vedic Yajna / Fire Sacrifice (Homa) & Navagraha Shanti">Vedic Yajna / Fire Sacrifice (Homa) & Navagraha Shanti</option>
-                    <option value="Career Inflection, Business & Financial Timing">Career Inflection, Business &
-                      Financial Timing</option>
-                    <option value="Kundali Milan & Relationship Synastry">Kundali Milan & Relationship Synastry</option>
-                    <option value="Spiritual & Life Counseling (Crossroads, Burnout & Inner Peace)">Spiritual & Life Counseling (Crossroads, Burnout & Inner Peace)</option>
-                    <option value="Marriage & Compatibility Timing">Marriage & Compatibility Timing</option>
-                    <option value="Moving Abroad & Relocation">Moving Abroad & Relocation</option>
-                    <option value="Stock Market & Financial Trading Timing">Stock Market & Financial Trading Timing</option>
-                    <option value="Loans & Debt Relief Resolution">Loans & Debt Relief Resolution</option>
-                    <option value="Child Future & Education Prospects">Child’s Future & Education Prospects</option>
-                    <option value="Name Spelling & Brand Vibrational Alignment">Name Spelling & Brand Vibrational Alignment</option>
-                    <option value="Lucky Phone Number & Vehicle Number Alignment">Lucky Phone Number & Vehicle Number Alignment</option>
-                    <option value="Comprehensive Life Direction & Ephemeris Reading">Comprehensive Life Direction & Ephemeris Reading</option>
-                  </select>
-                </div>
-
-                <div class="form-group form-group-full">
-                  <label class="form-label" for="intake-notes">Specific Queries, Life Dilemmas, or Property
-                    Notes</label>
-                  <textarea id="intake-notes" class="form-textarea" rows="3"
-                    placeholder="Briefly share any specific background context, dilemmas, or questions you would like Dr. Rahul to analyze..."></textarea>
+                    <div class="form-group form-group-full">
+                      <label class="form-label" for="counsel-notes">What is feeling heavy, conflicting, or stuck right now?</label>
+                      <textarea id="counsel-notes" class="form-textarea" rows="3" placeholder="Share whatever is on your mind in complete privacy. Dr. Rahul provides an empathetic, rational space combining Vedic psychology and practical strategy..."></textarea>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1746,8 +1990,8 @@
             <li><a href="#stats">Client Impact (1000+)</a></li>
             <li><a href="#logic-science">How Logic Works</a></li>
             <li><a href="#about">About Dr. Rahul Trivedi</a></li>
-            <li><a href="#cosmic-sciences">Cosmic Solutions</a></li>
-            <li><a href="#services">3 Core Services</a></li>
+            <li><a href="#services">4 Consultation Disciplines</a></li>
+            <li><a href="#astrology-life-tabs">Life Dimensions &amp; Timing</a></li>
             <li><a href="#whatsapp-intake">WhatsApp Consultation Intake</a></li>
           </ul>
         </div>

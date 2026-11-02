@@ -121,8 +121,12 @@ html, body {
   .hero-visual {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
     padding: 1rem 0;
+  }
+
+  .hero-emblem-visual {
+    margin-bottom: 3.2rem;
   }
 
   .hero-title {
