@@ -1,59 +1,86 @@
 :root {
-  /* Color Palette - Modern High-Clarity Light Theme (Porcelain & Imperial Indigo) */
-  --bg-space-deep: #fcfcfd;
-  --bg-space-dark: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #ffffff;
-  --bg-card: #ffffff;
-  --bg-card-hover: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.95);
+  /* ==========================================================================
+     Vedic Manuscript Theme Palette (Inspired by peaklife.me & Ancient Shastras)
+     ========================================================================== */
 
-  /* Deep Imperial Cosmic Indigo (For Authority, Legibility & Headings) */
-  --indigo-950: #070c1e;
-  --indigo-900: #090e24;
-  --indigo-800: #0f172a;
-  --indigo-700: #1e293b;
-  --indigo-600: #334155;
+  /* Manuscript Parchment & Cream Backgrounds */
+  --peak-cream: #F8EFDB;            /* Peak life body cream */
+  --peak-bone: #F5ECD9;             /* Peak life canvas bone */
+  --peak-bone-deep: #EDE3CC;        /* Subtle recessed bone */
+  --peak-parchment: #FDFBF7;        /* Crisp manuscript ivory */
+  --peak-parchment-warm: #FAF4E8;   /* Warm parchment card */
+  --peak-card: #FFFDF9;             /* Elevated manuscript card */
+  --peak-rule: #DFD3B8;             /* Subtle manuscript border */
+  --peak-rule-deep: #CBBF9F;        /* Defining manuscript rule */
 
-  /* Royal Champagne Swarna Gold (Polished, Luminous, Regal) */
-  --gold-100: #fdfbf7;
-  --gold-200: #f7edd5;
-  --gold-300: #eedebd;
-  --gold-400: #dfb746;
-  --gold-500: #c59b27;
-  --gold-primary: #c2410c;
-  --gold-bright: #ea580c;
-  --gold-rich: #9a3412;
-  --gold-dark: #7c2d12;
-  --gold-glow: rgba(194, 65, 12, 0.1);
-  --gold-glow-lg: rgba(194, 65, 12, 0.2);
-  --gold-border: #e2e8f0;
-  --gold-border-bright: #c2410c;
-  --gold-subtle: #fff7ed;
+  /* Deep Warm Graphite & Sacred Manuscript Ink */
+  --peak-ink: #2A2418;              /* Ancient ink / warm graphite text */
+  --peak-ink-deep: #1A150D;         /* Pure title & heading ink */
+  --peak-muted: #5E5340;            /* Warm readable secondary text */
+  --peak-muted-light: #7D725C;      /* Warm muted caption */
 
-  /* Sacred Kesari Saffron & Vermilion */
-  --kesari-primary: #c2410c;
-  --kesari-bright: #ea580c;
-  --kesari-deep: #9a3412;
-  --kesari-subtle: #fff7ed;
-  --kumkum-accent: #be123c;
+  /* Sacred Vedic Gold & Saffron Vermilion */
+  --peak-gold: #C28D2A;             /* Sacred Swarna Gold */
+  --peak-gold-bright: #D4A034;      /* Luminous gold highlight */
+  --peak-gold-deep: #9E7422;        /* Deep aged gold */
+  --peak-gold-tint: rgba(194, 141, 42, 0.12);
+  --peak-gold-border: rgba(194, 141, 42, 0.35);
+
+  --kesari-primary: #BA4E18;        /* Sacred Kesari Saffron */
+  --kesari-bright: #D95D20;         /* Vermilion vibrant */
+  --kesari-deep: #8F380E;           /* Deep terracotta saffron */
+  --kesari-subtle: #F6EBDB;         /* Saffron wash */
+  --kumkum-accent: #B91C1C;
+
+  /* Theme Mappings */
+  --bg-space-deep: #F8EFDB;         /* Vedic manuscript base cream */
+  --bg-space-dark: #F5ECD9;         /* Bone parchment */
+  --bg-surface: #FFFDF9;            /* Pure manuscript card */
+  --bg-surface-elevated: #FFFFFF;
+  --bg-card: #FFFDF9;
+  --bg-card-hover: #FFFFFF;
+  --bg-glass: rgba(248, 239, 219, 0.94);
+  --bg-recessed: #EDE3CC;
+
+  /* Warm Ink Tones */
+  --indigo-950: #1A150D;
+  --indigo-900: #2A2418;
+  --indigo-800: #383022;
+  --indigo-700: #4D4332;
+  --indigo-600: #5E5340;
+
+  /* Royal Swarna Gold */
+  --gold-100: #FAF4E8;
+  --gold-200: #F3E7CF;
+  --gold-300: #E6D4AF;
+  --gold-400: #D4A034;
+  --gold-500: #C28D2A;
+  --gold-primary: #C28D2A;
+  --gold-bright: #D4A034;
+  --gold-rich: #9E7422;
+  --gold-dark: #7A5714;
+  --gold-glow: rgba(194, 141, 42, 0.15);
+  --gold-glow-lg: rgba(194, 141, 42, 0.25);
+  --gold-border: #DFD3B8;
+  --gold-border-bright: #C28D2A;
+  --gold-subtle: #FAF4E8;
 
   /* WhatsApp Emerald */
-  --whatsapp-green: #25D366;
-  --whatsapp-hover: #1ebc57;
-  --whatsapp-dark: #075E54;
-  --whatsapp-glow: rgba(37, 211, 102, 0.25);
+  --whatsapp-green: #1EBE5D;
+  --whatsapp-hover: #16A34A;
+  --whatsapp-dark: #0D6930;
+  --whatsapp-glow: rgba(30, 190, 93, 0.22);
 
-  /* Text & Typography (High Legibility on Crisp Light) */
-  --text-white: #090e24;       /* Used on headings for bold imperial contrast */
-  --text-primary: #1e293b;     /* Primary body text */
-  --text-secondary: #475569;   /* Supporting paragraphs */
-  --text-muted: #64748b;       /* Captions and hints */
-  --text-gold: #996515;
-  --text-kesari: #c2410c;
+  /* Text & Typography (Vedic Ink Contrast) */
+  --text-white: #1A150D;            /* Deepest ink for headings */
+  --text-primary: #2A2418;          /* Warm graphite body text */
+  --text-secondary: #5E5340;        /* Supporting paragraphs */
+  --text-muted: #7D725C;            /* Captions and hints */
+  --text-gold: #9E7422;
+  --text-kesari: #BA4E18;
 
   /* Accent Tones */
-  --cyan-accent: #0284c7;
+  --cyan-accent: #0284C7;
   --cyan-glow: rgba(2, 132, 199, 0.12);
   --emerald-accent: #059669;
 
@@ -70,17 +97,17 @@
 
   /* Radii */
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
   --radius-full: 9999px;
 
-  /* Crisp Modern Clean Shadows */
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
-  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
-  --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
-  --shadow-gold: 0 6px 20px rgba(179, 135, 40, 0.12);
-  --shadow-gold-lg: 0 12px 36px rgba(179, 135, 40, 0.18);
+  /* Warm Manuscript Shadows */
+  --shadow-sm: 0 1px 3px rgba(42, 36, 24, 0.05), 0 1px 2px rgba(42, 36, 24, 0.03);
+  --shadow-md: 0 4px 18px -2px rgba(42, 36, 24, 0.07), 0 2px 6px -1px rgba(42, 36, 24, 0.04);
+  --shadow-lg: 0 14px 34px -4px rgba(42, 36, 24, 0.09), 0 4px 14px -2px rgba(42, 36, 24, 0.05);
+  --shadow-gold: 0 6px 20px rgba(194, 141, 42, 0.18);
+  --shadow-gold-lg: 0 12px 36px rgba(194, 141, 42, 0.25);
 
   /* Transitions */
   --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);

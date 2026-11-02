@@ -436,4 +436,19 @@ html, body {
     padding: 0.65rem 1rem;
     font-size: 0.85rem;
   }
+
+  .vastu-tidbits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vastu-tidbits-action-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .vastu-tidbits-action-bar .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

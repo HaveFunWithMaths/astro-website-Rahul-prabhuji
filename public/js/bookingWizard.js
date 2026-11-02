@@ -1,19 +1,148 @@
 /**
  * 3-Step WhatsApp Consultation Intake Wizard Module
- * Step 1: Service Selection (Astrology, Numerology, Vastu)
- * Step 2: Intake Form (DOB, TOB, POB for Astro/Numerology or Property details for Vastu)
- * Step 3: Date & Slot Scheduling + Live Formatted WhatsApp Message Preview & Dispatch to +91 91525 17036
+ * Features:
+ * - Category-Based Filtering (Vastu, Astrology, Numerology, Life Counseling, Work, Relationships, Kids & Study, Health, Money)
+ * - Dynamic Service & Inquiry Focus Synchronization
+ * - Date & Slot Scheduling
+ * - Live Formatted WhatsApp Message Preview & Direct Dispatch to +91 91525 17036
  */
+
+const INTAKE_CATEGORIES = {
+  all: {
+    name: 'All Disciplines',
+    serviceId: null,
+    options: [
+      { value: "Kids' Study Zone & Overcoming Restlessness/Distraction (Vastu)", label: "Kids' Study Zone & Overcoming Restlessness/Distraction (Vastu)", service: 'vastu' },
+      { value: "Health, Sickness & Restful Sleep Placement (Vastu)", label: "Health, Sickness & Restful Sleep Placement (Vastu)", service: 'vastu' },
+      { value: "Toilet in NE / Main Door in SW Non-Destructive Remedy", label: "Toilet in NE / Main Door in SW Non-Destructive Remedy", service: 'vastu' },
+      { value: "Residential Griha Vastu & Family Well-being", label: "Residential Griha Vastu & Family Well-being", service: 'vastu' },
+      { value: "Commercial Office / Shop / Factory Growth", label: "Commercial Office / Shop / Factory Growth", service: 'vastu' },
+      { value: "Plot Assessment & Land Layout Planning", label: "Plot Assessment & Land Layout Planning", service: 'vastu' },
+      { value: "Career Inflection, Promotion & Job vs Business Timing", label: "Career Inflection, Promotion & Job vs Business Timing", service: 'astrology' },
+      { value: "The Next Move — Clarity on Immediate Crossroads", label: "The Next Move — Clarity on Immediate Crossroads", service: 'astrology' },
+      { value: "Kundali Milan & Relationship Compatibility", label: "Kundali Milan & Relationship Compatibility", service: 'astrology' },
+      { value: "Marriage Timing & Family Harmony", label: "Marriage Timing & Family Harmony", service: 'astrology' },
+      { value: "Financial Cycles, Investments & Debt Relief", label: "Financial Cycles, Investments & Debt Relief", service: 'astrology' },
+      { value: "Vedic Yajna / Fire Sacrifice (Homa) & Navagraha Shanti", label: "Vedic Yajna / Fire Sacrifice (Homa) & Navagraha Shanti", service: 'astrology' },
+      { value: "Moving Abroad / Relocation Timing", label: "Moving Abroad / Relocation Timing", service: 'astrology' },
+      { value: "Child Future, Natural Talents & Education", label: "Child Future, Natural Talents & Education", service: 'astrology' },
+      { value: "Personal Name Spelling & Brand Name Harmony", label: "Personal Name Spelling & Brand Name Harmony", service: 'numerology' },
+      { value: "Lucky Phone Number & Vehicle Number Alignment", label: "Lucky Phone Number & Vehicle Number Alignment", service: 'numerology' },
+      { value: "Personal Year Cycle & Milestone Planning", label: "Personal Year Cycle & Milestone Planning", service: 'numerology' },
+      { value: "Life Crossroads, Decision Paralysis & Burnout Relief", label: "Life Crossroads, Decision Paralysis & Burnout Relief", service: 'counsellor' },
+      { value: "Spiritual Guidance & Daily Mindfulness Framework", label: "Spiritual Guidance & Daily Mindfulness Framework", service: 'counsellor' }
+    ]
+  },
+  vastu: {
+    name: 'Vastu & Living Spaces',
+    serviceId: 'vastu',
+    options: [
+      { value: "Kids' Study Zone & Overcoming Restlessness/Distraction (Vastu)", label: "🎒 Kids' Study Zone & Overcoming Distraction / Laziness" },
+      { value: "Health, Sickness & Restful Sleep Placement (Vastu)", label: "🛌 Health, Morning Tiredness & Bed Placement" },
+      { value: "Toilet in NE / Main Door in SW Non-Destructive Remedy", label: "⚠️ Toilet in NE / Main Door in SW (Zero Demolition)" },
+      { value: "Residential Griha Vastu & Family Well-being", label: "🏡 Residential Apartment / Bungalow Harmony" },
+      { value: "Commercial Office / Shop / Factory Growth", label: "🏢 Commercial Office & Business Seating Flow" },
+      { value: "Negative Energy & Spatial Clearing", label: "✨ Negative Energy Clearing & Spatial Harmony" },
+      { value: "Plot Assessment & Land Layout Planning", label: "📐 Buying Land / Plot Layout Assessment" }
+    ]
+  },
+  astrology: {
+    name: 'Vedic Astrology & Timing',
+    serviceId: 'astrology',
+    options: [
+      { value: "The Next Move — Clarity on Immediate Crossroads", label: "🎯 The Next Move — Strategic Guidance for Crossroads" },
+      { value: "Career Inflection, Promotion & Job vs Business Timing", label: "💼 Career Timing & Business Venture Window" },
+      { value: "Kundali Milan & Relationship Compatibility", label: "❤️ Kundali Milan & Relationship Harmony" },
+      { value: "Marriage Timing & Auspicious Muhurat", label: "💍 Marriage Timing & Partner Compatibility" },
+      { value: "Financial Cycles, Investments & Debt Relief", label: "💰 Wealth Timing & Financial Stress Resolution" },
+      { value: "Vedic Yajna / Fire Sacrifice (Homa) & Navagraha Shanti", label: "🔥 Vedic Yajna & Sacred Fire Remedies" },
+      { value: "Moving Abroad / Relocation Timing", label: "✈️ Relocation & Overseas Opportunities" },
+      { value: "Child Future, Natural Talents & Education", label: "👶 Child Future, Strengths & Education Direction" }
+    ]
+  },
+  numerology: {
+    name: 'Name & Number Tuning',
+    serviceId: 'numerology',
+    options: [
+      { value: "Personal Name Spelling & Brand Name Harmony", label: "✍️ Personal Name Spelling Harmony" },
+      { value: "Business Brand Name Acoustic Frequency", label: "🏢 Business Brand Name Frequency Optimization" },
+      { value: "Lucky Phone Number & Vehicle Number Alignment", label: "📱 Everyday Phone & Vehicle Number Tuning" },
+      { value: "Baby Naming & Auspicious Initial Resonance", label: "👶 Baby Naming According to Birth Rhythm" },
+      { value: "Personal Year Cycle & Milestone Planning", label: "📅 Personal Year Cycle & Milestone Roadmap" },
+      { value: "Signature Alignment & Professional Energy", label: "🖋️ Signature Alignment for Confidence" }
+    ]
+  },
+  counsellor: {
+    name: 'Life & Spiritual Counseling',
+    serviceId: 'counsellor',
+    options: [
+      { value: "Life Crossroads, Decision Paralysis & Burnout Relief", label: "🧭 Navigating Major Life Crossroads & Decision Paralysis" },
+      { value: "Stress, Chronic Anxiety & Emotional Burnout", label: "🌿 Overcoming Stress, Chronic Anxiety & Burnout" },
+      { value: "Relationship Boundaries & Emotional Healing", label: "🤝 Relationship Boundaries & Compassionate Communication" },
+      { value: "Spiritual Guidance & Daily Mindfulness Framework", label: "🧘 Practical Daily Mindfulness & Inner Resilience" }
+    ]
+  },
+  work: {
+    name: 'Work, Career & Business',
+    serviceId: 'astrology',
+    options: [
+      { value: "Career Inflection, Promotion & Job vs Business Timing", label: "💼 Career Inflection, Promotion & Job vs Business Timing" },
+      { value: "The Next Move — Clarity on Immediate Crossroads", label: "🎯 The Next Move — Actionable Direction for Work" },
+      { value: "Commercial Office / Shop / Factory Growth", label: "🏢 Office Seating & Commercial Vastu for Business" },
+      { value: "Business Brand Name Acoustic Frequency", label: "🔢 Brand Name Resonance & Company Numerology" }
+    ]
+  },
+  relationships: {
+    name: 'Relationships & Family',
+    serviceId: 'astrology',
+    options: [
+      { value: "Kundali Milan & Relationship Compatibility", label: "❤️ Kundali Milan & Temperament Synastry" },
+      { value: "Marriage Timing & Partner Compatibility", label: "💍 Marriage Timing & Resolution of Delays" },
+      { value: "Residential Griha Vastu & Family Well-being", label: "🏡 Home Vastu to Clear Family Tension & Arguments" },
+      { value: "Relationship Boundaries & Emotional Healing", label: "🧘 Confidential Counseling for Relationship Healing" }
+    ]
+  },
+  kids: {
+    name: 'Kids, Study & Education',
+    serviceId: 'vastu',
+    options: [
+      { value: "Kids' Study Zone & Overcoming Restlessness/Distraction (Vastu)", label: "🎒 Kids' Study Spot: Overcoming Distraction & Laziness" },
+      { value: "Child Future, Natural Talents & Education", label: "🪐 Child’s Astrological Strengths, Higher Education & Talents" },
+      { value: "Baby Naming & Auspicious Initial Resonance", label: "🔢 Child Name Tuning & Auspicious Acoustic Harmony" }
+    ]
+  },
+  health: {
+    name: 'Health, Sleep & Vitality',
+    serviceId: 'vastu',
+    options: [
+      { value: "Health, Sickness & Restful Sleep Placement (Vastu)", label: "🛌 Bedroom Vastu: Eliminating Morning Fatigue & Sickness" },
+      { value: "Health Vulnerability & Stress Timing Windows", label: "🪐 Astrological Planetary Transit & Health Stress Windows" },
+      { value: "Stress, Chronic Anxiety & Emotional Burnout", label: "🌿 Mindfulness & Stress Recovery Counseling" }
+    ]
+  },
+  money: {
+    name: 'Money, Wealth & Property',
+    serviceId: 'vastu',
+    options: [
+      { value: "Toilet in NE / Main Door in SW Non-Destructive Remedy", label: "⚠️ Stopping Wealth Drains (NE Toilet / SW Door Fixes)" },
+      { value: "Financial Cycles, Investments & Debt Relief", label: "💰 Astrological Wealth Cycles & Debt Resolution Timing" },
+      { value: "Plot Assessment & Land Layout Planning", label: "📐 Buying Property / Commercial Land Vastu Check" },
+      { value: "Lucky Phone Number & Vehicle Number Alignment", label: "📱 Everyday Phone & Vehicle Number Tuning" }
+    ]
+  }
+};
 
 class BookingWizard {
   constructor() {
     this.currentStep = 1;
     this.totalSteps = 3;
+    this.currentCategory = 'all';
 
     this.bookingData = {
-      service: 'Vedic Astrology Consultation',
-      serviceId: 'astrology',
-      duration: '60 - 75 Mins',
+      service: 'Vastu Shastra Consultation',
+      serviceId: 'vastu',
+      duration: 'Comprehensive Layout & Spatial Audit',
+      category: 'all',
       fullName: '',
       email: '',
       phone: '',
@@ -24,7 +153,7 @@ class BookingWizard {
       pobState: '',
       propertyType: 'Residential Apartment / Flat',
       propertyDirection: 'North Facing',
-      focusArea: 'Career Inflection & Life Direction',
+      focusArea: "Kids' Study Zone & Overcoming Restlessness/Distraction (Vastu)",
       notes: '',
       selectedDate: '',
       selectedTime: '04:00 PM IST',
@@ -35,15 +164,84 @@ class BookingWizard {
   }
 
   init() {
+    this.setupCategoryFilters();
     this.setupNavigation();
     this.setupServiceSelection();
     this.setupCalendar();
     this.setupFormSync();
     this.setupModal();
+    this.toggleServiceSpecificFields(this.bookingData.serviceId);
     this.updateUI();
 
     // Attach global instance for cross-component triggers
     window.bookingWizardInstance = this;
+  }
+
+  setupCategoryFilters() {
+    const chips = document.querySelectorAll('.intake-chip-btn');
+    chips.forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = chip.getAttribute('data-category') || 'all';
+        this.filterByCategory(category);
+      });
+    });
+
+    const categorySelect = document.getElementById('intake-category-select');
+    if (categorySelect) {
+      categorySelect.addEventListener('change', (e) => {
+        this.filterByCategory(e.target.value);
+      });
+    }
+  }
+
+  filterByCategory(category) {
+    this.currentCategory = category;
+    this.bookingData.category = category;
+
+    // Update chips active state
+    document.querySelectorAll('.intake-chip-btn').forEach(btn => {
+      if (btn.getAttribute('data-category') === category) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Update category dropdown if present
+    const categorySelect = document.getElementById('intake-category-select');
+    if (categorySelect && categorySelect.value !== category) {
+      categorySelect.value = category;
+    }
+
+    const catData = INTAKE_CATEGORIES[category] || INTAKE_CATEGORIES.all;
+
+    // If category specifies a preferred service, select it
+    if (catData.serviceId) {
+      const targetCard = document.querySelector(`.service-select-card[data-service-id="${catData.serviceId}"]`);
+      if (targetCard && !targetCard.classList.contains('selected')) {
+        targetCard.click();
+      }
+    }
+
+    // Populate focus dropdown with category options
+    const focusSelect = document.getElementById('intake-focus');
+    if (focusSelect) {
+      focusSelect.innerHTML = '';
+      catData.options.forEach(opt => {
+        const optionEl = document.createElement('option');
+        optionEl.value = opt.value;
+        optionEl.textContent = opt.label;
+        focusSelect.appendChild(optionEl);
+      });
+
+      if (catData.options.length > 0) {
+        focusSelect.selectedIndex = 0;
+        this.bookingData.focusArea = catData.options[0].value;
+      }
+    }
+
+    this.updateSummary();
   }
 
   setupNavigation() {
@@ -94,7 +292,7 @@ class BookingWizard {
         this.bookingData.service = title;
         this.bookingData.duration = duration;
 
-        // Toggle form fields based on whether service is Vastu or Astrology/Numerology
+        // Toggle form fields based on whether service is Vastu, Counsellor, or Astrology/Numerology
         this.toggleServiceSpecificFields(serviceId);
         this.updateSummary();
       });
@@ -108,6 +306,9 @@ class BookingWizard {
     if (serviceId === 'vastu') {
       birthFields.forEach(el => el.style.display = 'none');
       vastuFields.forEach(el => el.style.display = 'block');
+    } else if (serviceId === 'counsellor') {
+      birthFields.forEach(el => el.style.display = 'block');
+      vastuFields.forEach(el => el.style.display = 'none');
     } else {
       birthFields.forEach(el => el.style.display = 'block');
       vastuFields.forEach(el => el.style.display = 'none');
@@ -196,7 +397,7 @@ class BookingWizard {
 
       if (!isPast) {
         dayEl.addEventListener('click', () => {
-          calendarDays.querySelectorAll('.day-slot').forEach(d => d.classList.remove('selected'));
+          document.querySelectorAll('.day-slot').forEach(d => d.classList.remove('selected'));
           dayEl.classList.add('selected');
           this.bookingData.selectedDate = `${day} ${currentMonthName}`;
           this.updateSummary();
@@ -206,50 +407,67 @@ class BookingWizard {
       calendarDays.appendChild(dayEl);
     }
 
-    const slots = ['10:00 AM IST', '11:30 AM IST', '02:00 PM IST', '04:00 PM IST', '06:00 PM IST', '07:30 PM IST'];
-    timeSlots.innerHTML = slots.map((slot, idx) => `
-      <button type="button" class="time-btn ${idx === 3 ? 'selected' : ''}" data-slot="${slot}">
-        ${slot}
-      </button>
-    `).join('');
+    const slots = [
+      '11:00 AM IST',
+      '02:30 PM IST',
+      '04:00 PM IST',
+      '06:00 PM IST',
+      '07:30 PM IST'
+    ];
 
-    timeSlots.querySelectorAll('.time-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        timeSlots.querySelectorAll('.time-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        this.bookingData.selectedTime = btn.getAttribute('data-slot');
+    timeSlots.innerHTML = '';
+    slots.forEach((slot, idx) => {
+      const slotBtn = document.createElement('button');
+      slotBtn.type = 'button';
+      slotBtn.className = `time-slot-pill ${idx === 2 ? 'selected' : ''}`;
+      slotBtn.innerText = slot;
+      slotBtn.addEventListener('click', () => {
+        document.querySelectorAll('.time-slot-pill').forEach(s => s.classList.remove('selected'));
+        slotBtn.classList.add('selected');
+        this.bookingData.selectedTime = slot;
         this.updateSummary();
       });
+      timeSlots.appendChild(slotBtn);
     });
   }
 
   validateCurrentStep() {
     if (this.currentStep === 1) {
-      return true;
+      return true; // Service selected by default
     }
 
     if (this.currentStep === 2) {
-      const name = document.getElementById('intake-name') ? document.getElementById('intake-name').value.trim() : '';
-      const phone = document.getElementById('intake-phone') ? document.getElementById('intake-phone').value.trim() : '';
-      const city = document.getElementById('intake-city') ? document.getElementById('intake-city').value.trim() : '';
+      const nameInput = document.getElementById('intake-name');
+      const phoneInput = document.getElementById('intake-phone');
+      const cityInput = document.getElementById('intake-city');
 
-      if (!name) {
-        alert('Please provide your Full Name.');
+      if (!nameInput || !nameInput.value.trim()) {
+        alert('Please enter your Full Name.');
+        if (nameInput) nameInput.focus();
         return false;
       }
 
-      if (this.bookingData.serviceId === 'vastu') {
-        if (!city) {
-          alert('Please provide the City / Location of the property.');
-          return false;
-        }
-      } else {
-        const dob = document.getElementById('intake-dob') ? document.getElementById('intake-dob').value.trim() : '';
-        if (!dob || !city) {
-          alert('Please fill in your Date of Birth and Place of Birth.');
+      if (!phoneInput || !phoneInput.value.trim()) {
+        alert('Please enter your WhatsApp Number.');
+        if (phoneInput) phoneInput.focus();
+        return false;
+      }
+
+      if (!cityInput || !cityInput.value.trim()) {
+        alert('Please enter your City/Location.');
+        if (cityInput) cityInput.focus();
+        return false;
+      }
+
+      if (this.bookingData.serviceId === 'astrology' || this.bookingData.serviceId === 'numerology') {
+        const dobInput = document.getElementById('intake-dob');
+        if (!dobInput || !dobInput.value) {
+          alert('Date of Birth is required for accurate astronomical and numerological analysis.');
+          if (dobInput) dobInput.focus();
           return false;
         }
       }
+
       return true;
     }
 
@@ -257,31 +475,36 @@ class BookingWizard {
   }
 
   updateUI() {
+    // Progress nodes
     for (let i = 1; i <= this.totalSteps; i++) {
       const node = document.getElementById(`step-node-${i}`);
       const panel = document.getElementById(`step-panel-${i}`);
-      if (node && panel) {
+
+      if (node) {
+        node.classList.remove('active', 'completed');
         if (i === this.currentStep) {
           node.classList.add('active');
-          node.classList.remove('completed');
-          panel.classList.add('active');
         } else if (i < this.currentStep) {
-          node.classList.remove('active');
           node.classList.add('completed');
-          panel.classList.remove('active');
-        } else {
-          node.classList.remove('active');
-          node.classList.remove('completed');
-          panel.classList.remove('active');
+        }
+      }
+
+      if (panel) {
+        panel.classList.remove('active');
+        if (i === this.currentStep) {
+          panel.classList.add('active');
         }
       }
     }
 
+    // Progress bar fill percentage
     const fill = document.getElementById('progress-line-fill');
     if (fill) {
-      fill.style.width = `${((this.currentStep - 1) / (this.totalSteps - 1)) * 100}%`;
+      const pct = ((this.currentStep - 1) / (this.totalSteps - 1)) * 100;
+      fill.style.width = `${pct}%`;
     }
 
+    // Action buttons visibility
     const prevBtn = document.getElementById('wizard-prev-btn');
     const nextBtn = document.getElementById('wizard-next-btn');
     const submitBtn = document.getElementById('wizard-submit-btn');
@@ -310,6 +533,9 @@ class BookingWizard {
         const dir = this.bookingData.propertyDirection || '';
         const city = this.bookingData.pobCity || '';
         elBirth.innerText = `${prop} ${dir ? '• ' + dir : ''} ${city ? '• ' + city : ''}`;
+      } else if (this.bookingData.serviceId === 'counsellor') {
+        const city = this.bookingData.pobCity || '';
+        elBirth.innerText = `1-on-1 Confidential Counseling ${city ? '• ' + city : ''}`;
       } else {
         const dob = this.bookingData.dob || '—';
         const tob = this.bookingData.tob || '';
@@ -325,28 +551,33 @@ class BookingWizard {
   }
 
   generateWhatsAppMessage(isPreview = false) {
-    let msg = `*॥ Consultation Inquiry — My Astro Academy ॥*\n*Dr. Rahul Trivedi, Ph.D. (IIT-Madras)*\n\n`;
-    msg += `*Selected Focus:* ${this.bookingData.service}\n`;
-    msg += `*Preferred Window:* ${this.bookingData.selectedDate || 'Upcoming Date'} at ${this.bookingData.selectedTime}\n`;
+    let msg = `*॥ Consultation Inquiry — My Astro Academy ॥*\n*Dr. Rahul Trivedi, Ph.D. (IIT-Madras)*\n*Higher Dimensional Sciences (Verifiable Ancient Wisdom)*\n\n`;
+    msg += `*Selected Discipline:* ${this.bookingData.service}\n`;
+    msg += `*Preferred Time Window:* ${this.bookingData.selectedDate || 'Upcoming Date'} at ${this.bookingData.selectedTime}\n`;
     msg += `*Client Name:* ${this.bookingData.fullName || '[Your Name]'}\n`;
     if (this.bookingData.phone) msg += `*Contact Phone:* ${this.bookingData.phone}\n`;
     if (this.bookingData.email) msg += `*Email:* ${this.bookingData.email}\n`;
 
     if (this.bookingData.serviceId === 'vastu') {
-      msg += `\n*-- Property & Spatial Parameters --*\n`;
-      msg += `*Property Type:* ${this.bookingData.propertyType}\n`;
-      msg += `*Facing Direction:* ${this.bookingData.propertyDirection}\n`;
+      msg += `\n*-- Property & Space Parameters --*\n`;
+      msg += `*Space Type:* ${this.bookingData.propertyType}\n`;
+      msg += `*Main Entrance:* ${this.bookingData.propertyDirection}\n`;
       msg += `*Location:* ${this.bookingData.pobCity || '[City]'}${this.bookingData.pobState ? ', ' + this.bookingData.pobState : ''}\n`;
+    } else if (this.bookingData.serviceId === 'counsellor') {
+      msg += `\n*-- Confidential Counseling Scope --*\n`;
+      msg += `*Consultation Mode:* 1-on-1 Spiritual & Life Counseling\n`;
+      if (this.bookingData.pobCity) msg += `*Location:* ${this.bookingData.pobCity}${this.bookingData.pobState ? ', ' + this.bookingData.pobState : ''}\n`;
+      if (this.bookingData.dob) msg += `*Date of Birth (Optional):* ${this.bookingData.dob}\n`;
     } else {
-      msg += `\n*-- Ephemeris & Birth Parameters --*\n`;
+      msg += `\n*-- Astronomical & Birth Parameters --*\n`;
       msg += `*Date of Birth:* ${this.bookingData.dob || '[DD/MM/YYYY]'}\n`;
       msg += `*Time of Birth:* ${this.bookingData.tob || 'To confirm'} (${this.bookingData.tobAccuracy})\n`;
       msg += `*Place of Birth:* ${this.bookingData.pobCity || '[City]'}${this.bookingData.pobState ? ', ' + this.bookingData.pobState : ''}\n`;
     }
 
-    msg += `\n*Primary Concern/Focus:* ${this.bookingData.focusArea}\n`;
+    msg += `\n*Primary Area of Inquiry:* ${this.bookingData.focusArea}\n`;
     if (this.bookingData.notes) {
-      msg += `*Specific Questions:* ${this.bookingData.notes}\n`;
+      msg += `*Specific Context / Dilemma:* ${this.bookingData.notes}\n`;
     }
 
     if (!isPreview && this.bookingData.refCode) {
@@ -379,13 +610,15 @@ class BookingWizard {
     if (modalSummary) {
       modalSummary.innerHTML = `
         <div style="margin-bottom: 0.6rem;">
-          <span style="color: var(--gold-primary); font-weight: 700; font-size: 1.05rem;">${this.bookingData.service}</span>
+          <span style="color: var(--kesari-primary); font-weight: 700; font-size: 1.05rem;">${this.bookingData.service}</span>
         </div>
         <div>Slot: <strong>${this.bookingData.selectedDate} at ${this.bookingData.selectedTime}</strong></div>
         <div>Client: <strong>${this.bookingData.fullName}</strong></div>
         ${this.bookingData.serviceId === 'vastu'
-          ? `<div>Property: <strong>${this.bookingData.propertyType} (${this.bookingData.pobCity})</strong></div>`
-          : `<div>Birth: <strong>${this.bookingData.dob} (${this.bookingData.pobCity})</strong></div>`
+          ? `<div>Property: <strong>${this.bookingData.propertyType} (${this.bookingData.pobCity || 'Site'})</strong></div>`
+          : this.bookingData.serviceId === 'counsellor'
+            ? `<div>Session: <strong>Confidential 1-on-1 Guidance</strong></div>`
+            : `<div>Birth: <strong>${this.bookingData.dob} (${this.bookingData.pobCity})</strong></div>`
         }
         <div style="margin-top: 0.6rem; color: var(--text-muted); font-size: 0.85rem;">
           Consultant: <strong>Dr. Rahul Trivedi, Ph.D. (IIT-Madras)</strong>
@@ -437,7 +670,7 @@ window.selectServiceAndBook = function(serviceId) {
 };
 
 // Global function to handle dilemma pills
-window.selectDilemmaAndConsult = function(dilemmaText, suggestedService = 'astrology') {
+window.selectDilemmaAndConsult = function(dilemmaText, suggestedService = 'vastu') {
   const wizard = window.bookingWizardInstance;
   if (!wizard) return;
 
@@ -455,12 +688,22 @@ window.selectDilemmaAndConsult = function(dilemmaText, suggestedService = 'astro
   wizard.bookingData.focusArea = dilemmaText;
   const focusSelect = document.getElementById('intake-focus');
   if (focusSelect) {
+    let matched = false;
     for (let opt of focusSelect.options) {
       if (opt.text.toLowerCase().includes(dilemmaText.toLowerCase().split(' ')[0])) {
         focusSelect.value = opt.value;
         wizard.bookingData.focusArea = opt.value;
+        matched = true;
         break;
       }
+    }
+    if (!matched) {
+      const customOpt = document.createElement('option');
+      customOpt.value = dilemmaText;
+      customOpt.text = dilemmaText;
+      customOpt.selected = true;
+      focusSelect.prepend(customOpt);
+      wizard.bookingData.focusArea = dilemmaText;
     }
   }
 

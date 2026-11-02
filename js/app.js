@@ -96,4 +96,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 6. Astrology Life Dimension Tabs Switcher (Work, Relationships, Health, Money, Timing, The Next Move)
+  const astroTabBtns = document.querySelectorAll('.astro-tab-btn');
+  const astroTabPanels = document.querySelectorAll('.astro-tab-panel');
+
+  if (astroTabBtns.length > 0) {
+    astroTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab');
+        
+        astroTabBtns.forEach(b => b.classList.remove('active'));
+        astroTabPanels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
+      });
+    });
+  }
 });
